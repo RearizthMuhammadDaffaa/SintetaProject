@@ -100,6 +100,7 @@ const Promo = () => {
         alignItems:'center',
         flexDirection:'column',
         paddingLeft:{md:'30px',xs:'0px'},
+        boxSizing:'border-box',
         overflow:'hidden',
         position:'relative'
       }}

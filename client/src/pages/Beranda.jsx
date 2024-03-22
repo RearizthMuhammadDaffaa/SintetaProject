@@ -5,6 +5,9 @@ import Promo from '../components/Promo'
 import { Box } from '@mui/material'
 import BannerKelolosan from '../components/BannerKelolosan'
 import BannerFasilitas from '../components/BannerFasilitas'
+import SectionBanner from '../components/SectionBanner'
+import HomeTestimoni from '../components/HomeTestimoni'
+import ArtikelHome from '../components/ArtikelHome'
 
 const Beranda = () => {
   return (
@@ -19,6 +22,9 @@ const Beranda = () => {
      <Promo />
      <Program />
      <BannerFasilitas />
+     <SectionBanner />
+     <HomeTestimoni />
+     <ArtikelHome />
     </Box>
   )
 }

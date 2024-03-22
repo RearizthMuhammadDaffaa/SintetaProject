@@ -18,7 +18,7 @@ const BannerFasilitas = () => {
       alignItems:'center',
       background:'#9AC6E0',
       flexDirection:'column',
-      marginBottom:'500px'
+      marginBottom:'100px'
     }}>
 
 <Box sx={{
@@ -41,7 +41,7 @@ const BannerFasilitas = () => {
            
           }}
         >
-          Program Kami
+          Fasilitas
         </Typography>
         <span style={{
           display:'block',
