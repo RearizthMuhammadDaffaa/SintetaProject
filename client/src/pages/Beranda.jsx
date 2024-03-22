@@ -8,6 +8,7 @@ import BannerFasilitas from '../components/BannerFasilitas'
 import SectionBanner from '../components/SectionBanner'
 import HomeTestimoni from '../components/HomeTestimoni'
 import ArtikelHome from '../components/ArtikelHome'
+import MapHome from '../components/MapHome'
 
 const Beranda = () => {
   return (
@@ -25,6 +26,7 @@ const Beranda = () => {
      <SectionBanner />
      <HomeTestimoni />
      <ArtikelHome />
+     <MapHome />
     </Box>
   )
 }

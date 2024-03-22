@@ -14,7 +14,7 @@ const ListProgram = ({data}) => {
       component="img"
       alt="green iguana"
       height="196"
-      image="/static/images/cards/contemplative-reptile.jpg"
+      image={data.img}
     />
     <CardContent>
       <Typography gutterBottom variant="h5" component="div">
