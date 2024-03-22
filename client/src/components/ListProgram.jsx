@@ -8,8 +8,9 @@ const ListProgram = ({data}) => {
   const maxChar = 200;
   return (
  
-    <Card sx={{ width:'390px',height:'100%' ,flexShrink:'0' }}>
+    <Card sx={{ width:'390px',height:'100%',  zIndex:'10' ,flexShrink:'0' }}>
     <CardMedia
+    
       component="img"
       alt="green iguana"
       height="196"

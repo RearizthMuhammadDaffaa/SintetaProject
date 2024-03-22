@@ -5,9 +5,8 @@ import rightArrow from '../assets/img/Next Button (1).png'
 import ListProgram from './ListProgram'
 import data from '../utils/data'
 import Slider from "react-slick";
-import { dataProgram } from '../utils/data'
 
-const Program = () => {
+const Promo = () => {
 
   const settings = {
     arrow:true,
@@ -47,14 +46,14 @@ const Program = () => {
     sx={{
       width:'100%',
       height:'100%',
-      padding:{md:'120px 0',xs:'120px 0px'},
+      padding:{md:'120px 0px',xs:'120px 0px'},
       display:'flex',
       flexDirection:'column',
       justifyContent:'center',
       alignItems:'center'
     }}
    >
-      
+     
         <Box sx={{
           width:{md:'327px',lg:'327px',sm:'100%',xs:'100%'},
           height:{md:'89px',lg:'89px',sm:'60px',xs:'60px'},
@@ -63,8 +62,7 @@ const Program = () => {
           display:'flex',
           justifyContent:'center',
           alignItems:'center',
-          marginBottom:'50px'
-          
+          marginBottom:'60px'
         }}>
         <Typography
           sx={{
@@ -75,7 +73,7 @@ const Program = () => {
            
           }}
         >
-          Program Kami
+          Promo Kami
         </Typography>
         <span style={{
           display:'block',
@@ -86,9 +84,13 @@ const Program = () => {
           bottom:'0',
           
           }}></span>
-        </Box>
+        
      
       
+     
+        {/* <img src={rightArrow} alt="" /> */}
+      </Box>
+
       <Box
       sx={{
         width:'100%',
@@ -97,9 +99,9 @@ const Program = () => {
         justifyContent:'center',
         alignItems:'center',
         flexDirection:'column',
-       
+        paddingLeft:{md:'30px',xs:'0px'},
         overflow:'hidden',
-       
+        position:'relative'
       }}
       >
 
@@ -126,64 +128,24 @@ const Program = () => {
             justifyContent:'center',
             alignItems:'center'}}>
          
-          {dataProgram.map((item)=>(
-             <Card sx={{ width:'290px',height:'100%',  zIndex:'10' ,flexShrink:'0' }}>
-             <CardMedia
-             
-               component="img"
-            
-               height="196"
-               image={item.logo}
-             />
-             <CardContent>
-               <Typography sx={{
-                fontWeight:'600',
-                fontSize:'20px',
-                lineHeight:'24px',
-                color:"#202020"
-               }}>
-                 {item.teks1}
-               </Typography>
-               <Typography 
-                 sx={{
-                     fontWeight:'600',
-                     fontSize:'24px',
-                     lineHeight:'28.8px',
-                    padding:'15px 0px',
-                     color:'#61B3E3'
-                 }}
-               >
-                {item.teks2}
-               </Typography>
-               <Typography 
-                 sx={{
-                     fontWeight:'400',
-                     fontSize:'16px',
-                     lineHeight:'22.2px',
-                     color:'#4D4D4D'
-                 }}
-               >
-              {item.teks3}
-               </Typography>
-               
-               <Box
-                 sx={{
-                   width:'342px',
-                   heigh:'88px'
-                 }}
-               >
-                
-               </Box>
-               
-             
-             </CardContent>
-            
-           </Card>
+          {data.map((item)=>(
+            <ListProgram  data={item}/>
           ))}
 
 </Slider>
 
-          
+          <Box 
+           sx={{
+            position:'absolute',
+            bottom:'0',
+            width:'100%',
+            zIndex:'0'
+           }}
+          >
+          <svg width="100%" height="auto" viewBox="0 0 1238 183" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M-1 0L50.6667 37.1667C102.333 74.3333 205.667 148.667 309 185.833C412.333 223 515.667 223 619 185.833C722.333 148.667 825.667 74.3333 929 37.1667C1032.33 0 1135.67 0 1187.33 0H1239V223H1187.33C1135.67 223 1032.33 223 929 223C825.667 223 722.333 223 619 223C515.667 223 412.333 223 309 223C205.667 223 102.333 223 50.6667 223H-1V0Z" fill="#2A4088" fill-opacity="0.45"/>
+</svg>
+          </Box>  
      
       
         </Box>
@@ -195,4 +157,4 @@ const Program = () => {
   )
 }
 
-export default Program
+export default Promo
