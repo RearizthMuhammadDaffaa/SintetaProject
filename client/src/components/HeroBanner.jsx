@@ -23,7 +23,7 @@ const HeroBanner = () => {
     sx={{
       width:'100%',
       height:{md:'100%',lg:'100%',xs:'70%',sm:'70%'},
-      background:'#2A4088',
+      background:'#9AC6E0',
       display:'flex',
       flexDirection:'column',
       alignItems:'center',
@@ -76,7 +76,7 @@ const HeroBanner = () => {
       <StyledButton  variant="contained" 
         sx={{
           background:'#FFF',
-          color:'#000',
+          color:'#61B3E3',
           marginTop:'15px',
           "&.MuiButtonBase-root:hover": {
             bgcolor: "#FFF"

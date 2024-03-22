@@ -8,7 +8,7 @@ const Footer = () => {
   sx={{
     width:'100%',
     height:"100%",
-    background:'#2A4088',
+    background:'#9AC6E0',
     display:'flex',
     flexDirection:'column',
     alignItems:'center',
