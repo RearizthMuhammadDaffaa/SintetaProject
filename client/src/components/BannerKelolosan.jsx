@@ -1,4 +1,4 @@
-import { Box } from '@mui/material'
+import { Box, Typography } from '@mui/material'
 import React from 'react'
 
 const BannerKelolosan = () => {
@@ -42,7 +42,7 @@ const BannerKelolosan = () => {
            
           }}
         >
-          Promo Kami
+          Selamat Atas Kelolosan di PTN Impian
         </Typography>
         <span style={{
           display:'block',
