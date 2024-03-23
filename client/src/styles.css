@@ -1,0 +1,15 @@
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .slick-slide {
+    width: '80%';
+  }
+}
+
+html{
+  font-family:  "Plus Jakarta Sans","Roboto",sans-serif;;
+}
+
+.BoxAbout{
+  column-count: 2;
+  column-gap: 20px;
+ 
+}

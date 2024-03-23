@@ -73,6 +73,7 @@ const AboutKelas = () => {
 
    </Box>
     </Box>
+    
   )
 }
 

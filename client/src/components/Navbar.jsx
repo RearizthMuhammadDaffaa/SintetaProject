@@ -62,7 +62,9 @@ const Navbar = () => {
                flexDirection:'column',
               textAlign: 'center' }}>
       
-          <Link  style={{
+          <Link  
+            to="/kelolosan"
+          style={{
             fontSize:'16px',
             color:'#2A4088',
             textDecoration:'none'
@@ -199,7 +201,9 @@ const Navbar = () => {
             color:'#2A4088',
             textDecoration:'none'
             }}>Kelas</Link>
-          <Link  style={{
+          <Link  
+            to="/kelolosan"
+          style={{
             fontSize:'14px',
             color:'#2A4088',
             textDecoration:'none'

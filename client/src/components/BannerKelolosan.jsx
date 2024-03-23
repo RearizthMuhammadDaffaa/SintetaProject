@@ -1,8 +1,62 @@
 import { Box, Typography } from '@mui/material'
 import React from 'react'
 import BuktiKelolosan from "../assets/img/Gambar (1).png"
+import SectionTitle from './SectionTitle'
+import KelolosanCardHome from './KelolosanCardHome'
+import Slider from 'react-slick'
+import nextButton from "../assets/img/Next Button.png"
+
+
+
 
 const BannerKelolosan = () => {
+
+
+  const settings = {  
+    dots: true,
+    arrow:false,
+    speed: 800,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    customPaging:dots =>(
+      <div
+        style={{
+          width:'25px',
+          height:'25px',
+          borderRadius:'100%',
+          background:'#D9D9D9',
+          marginTop:'10px'
+        }}
+      >
+       
+      </div>
+    ),
+    responsive: [
+      {
+        breakpoint: 1024, // Atur breakpoint untuk layar desktop
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 768, // Atur breakpoint untuk layar tablet
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 480, // Atur breakpoint untuk layar ponsel
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+   
+  };
+
   return (
    <Box
     sx={{
@@ -30,7 +84,7 @@ const BannerKelolosan = () => {
         flexDirection:'column'
       }}
     >
-        <Box sx={{
+        {/* <Box sx={{
           width:{md:'900px',lg:'900px',sm:'100%',xs:'100%'},
           height:{md:'89px',lg:'89px',sm:'60px',xs:'60px'},
           position:'relative',
@@ -64,18 +118,46 @@ const BannerKelolosan = () => {
      
       
      
-        {/* <img src={rightArrow} alt="" /> */}
-      </Box>
+        
+      </Box> */}
+      <SectionTitle title="Selamat Atas Kelolosan di PTN Impian" />
       <Box
       sx={{
         width:{md:'100%',xs:'100%'},
         height:{md:'500px',xs:'100%'},
 
         display:'flex',
-        justifyContent:'center'
+        justifyContent:'center',
+        alignItems:'center',
+        flexDirection:'column',
+        gap:'30px'
       }}
       >
-        <img src={BuktiKelolosan} alt="" style={{ maxWidth: '100%', height: 'auto' }}/>
+        {/* <img src={BuktiKelolosan} alt="" style={{ maxWidth: '100%', height: 'auto' }}/> */}
+        <Box
+        sx={{
+          width:{md:'80%',xs:'100%'},
+          height:{md:'500px',xs:'100%'},
+  
+          display:'flex',
+          justifyContent:'center',
+          flexDirection:'column',
+          gap:'30px'
+        }}
+        >
+           <Slider {...settings}
+          style={{
+            width:'100%',
+          }}
+        >
+        <KelolosanCardHome />
+        <KelolosanCardHome />
+        <KelolosanCardHome />
+        <KelolosanCardHome />
+        </Slider>
+        </Box>
+       
+        
 
       </Box>
     </Box>

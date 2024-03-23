@@ -3,6 +3,7 @@ import React from 'react'
 
 import Banner1 from "../assets/img/Banner (2).png"
 import Banner2 from "../assets/img/Banner (3).png"
+import banner3 from "../assets/PromoImg/Section Banner.png"
 
 const SectionBanner = () => {
   return (
@@ -20,7 +21,7 @@ const SectionBanner = () => {
         flexDirection:{md:'row',xs:'column'}
       }}
     >
-      <Box
+      {/* <Box
         sx={{
           width:'100%',
           height:'100%'
@@ -29,18 +30,10 @@ const SectionBanner = () => {
 
         <img src={Banner1} alt="" style={{ maxWidth: '100%', height: 'auto' }}/>
 
-      </Box>
+      </Box> */}
 
-      <Box
-        sx={{
-          width:'100%',
-          height:'100%'
-        }}
-      >
-
-        <img src={Banner2} alt="" style={{ maxWidth: '100%', height: 'auto' }}/>
-
-      </Box>
+<img src={banner3} alt="" style={{ maxWidth: '100%', height: 'auto' }}/>
+    
 
     </Box>
   )

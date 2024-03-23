@@ -8,6 +8,8 @@ import Tentangkami from './pages/Tentangkami'
 import Fasilitas from './pages/Fasilitas'
 import Kelas from './pages/Kelas'
 import KelasDetail from './pages/KelasDetail'
+import './styles.css'
+import BuktiKelolosan from './pages/BuktiKelolosan'
 
 function App() {
  
@@ -25,6 +27,7 @@ function App() {
         <Route path='/fasilitas' element={<Fasilitas />}/>
         <Route path='/kelas' element={<Kelas />}/>
         <Route path='/kelas/:id' element={<KelasDetail />}/>
+        <Route path='/kelolosan' element={<BuktiKelolosan />}/>
       </Routes>
       <Footer />
     </Box>

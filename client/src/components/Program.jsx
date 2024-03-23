@@ -6,6 +6,7 @@ import ListProgram from './ListProgram'
 import data from '../utils/data'
 import Slider from "react-slick";
 import { dataProgram } from '../utils/data'
+import SectionTitle from './SectionTitle'
 
 const Program = () => {
 
@@ -55,7 +56,7 @@ const Program = () => {
     }}
    >
       
-        <Box sx={{
+        {/* <Box sx={{
           width:{md:'327px',lg:'327px',sm:'100%',xs:'100%'},
           height:{md:'89px',lg:'89px',sm:'60px',xs:'60px'},
           position:'relative',
@@ -86,7 +87,9 @@ const Program = () => {
           bottom:'0',
           
           }}></span>
-        </Box>
+        </Box> */}
+
+        <SectionTitle title="Program Kami"/>
      
       
       <Box

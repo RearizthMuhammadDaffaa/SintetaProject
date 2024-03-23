@@ -39,14 +39,14 @@ const MapHome = () => {
         }}>
         <Typography
           sx={{
-            fontSize:{md:'48px',lg:'48px',sm:'30px',xs:'30px'},
+            fontSize:{md:'48px',lg:'48px',sm:'20px',xs:'20px'},
             lineHeight:'52.8px',
             fontWeight:'700',
-            color:'#2A4088',
+            color:'#61B3E3',
            
           }}
         >
-         Temukan Cabang Terdekat Kami di Kotamu
+          Temukan Cabang Terdekat Kami di Kotamu
         </Typography>
         <span style={{
           display:'block',
@@ -58,6 +58,7 @@ const MapHome = () => {
           
           }}></span>
         </Box>
+        
 
         <Stack 
       

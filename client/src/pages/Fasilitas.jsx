@@ -35,7 +35,7 @@ const Fasilitas = () => {
            
           }}
         >
-          Fasilitas
+          Fasilitas 
         </Typography>
         <span style={{
           display:'block',
