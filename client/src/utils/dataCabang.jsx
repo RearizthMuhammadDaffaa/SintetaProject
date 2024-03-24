@@ -58,7 +58,7 @@ export const data_cabang = [
     img: pp7,
     daerah:"Jakata Timur - Pasar Rebo" ,
    alamat:"Jl. Lap. Tembak No.44, RT.4/RW.4, Cibubur, Kec. Ps. Rebo, Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta 13720" ,
-   noHp:"085773645583" ,
+   noHp:"6285773645583" ,
    linkMap:"https://maps.app.goo.gl/zKnbDy2cZ6EBsdYj8 ",
    },
    {
