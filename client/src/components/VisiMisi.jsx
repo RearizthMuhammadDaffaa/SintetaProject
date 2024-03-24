@@ -11,7 +11,7 @@ const VisiMisi = () => {
         flexDirection:'column',
         alignItems:'center',
         justifyContent:'center',
-        background:'#2A4088',
+        background:'linear-gradient(#38B6FF,#A1C6DB)',
         padding:'120px 0',
         gap:'70px'
       }}

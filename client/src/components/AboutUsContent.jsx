@@ -50,7 +50,7 @@ const AboutUsContent = () => {
             lineHeight:'52.8px'
           }}
         >
-          Tentang Kami <span style={{color:'#2A4088'}}>Sinteta</span>
+          Tentang Kami <span style={{color:'#61B3E3'}}>Sinteta</span>
         </Typography>
 
         <Box

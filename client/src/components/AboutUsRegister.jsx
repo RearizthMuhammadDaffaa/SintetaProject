@@ -30,7 +30,7 @@ const AboutUsRegister = () => {
         order:{md:'0',xs:'1'}
       }}
     >
-      <Typography sx={{textAlign:{md:'normal',xs:'center'}}}>
+      <Typography sx={{textAlign:{md:'justify',xs:'center'}}}>
       "Yuk, jadilah bagian dari perjalanan suksesmu bersama Bimbel Sinteta! Dapatkan bimbingan belajar terbaik yang akan membantu kamu mencapai prestasi tertinggi. Ayo daftar sekarang dan bersiaplah untuk meraih kesuksesan bersama kami!"
       </Typography>
 
@@ -38,7 +38,7 @@ const AboutUsRegister = () => {
       sx={{
         width:'242px',
         borderRadius:'12px',
-        background:'#2A4088'
+        background:'#38B6FF'
       }}
       variant="contained">Daftar Sekarang</Button>
     </Box>
@@ -49,7 +49,7 @@ const AboutUsRegister = () => {
         height:'100%',
   
         marginLeft:{md:'60px',xs:'0px'},
-        background:'#2A4088',
+        background:'linear-gradient(#38B6FF,#A1C6DB)',
         borderRadius:'40px 40px 0px 0px'
       }}
     >

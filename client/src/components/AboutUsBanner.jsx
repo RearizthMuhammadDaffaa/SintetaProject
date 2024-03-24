@@ -23,7 +23,7 @@ const AboutUsBanner = () => {
     sx={{
       width:'100%',
       height:{md:'100%',lg:'100%',xs:'70%',sm:'70%'},
-      background:'#2A4088',
+      background:'linear-gradient(#38B6FF,#A1C6DB)',
       display:'flex',
       flexDirection:'column',
       alignItems:'center',
@@ -39,12 +39,12 @@ const AboutUsBanner = () => {
       fontWeight='800'
       lineHeight='66px'
       align='center'
-      color='#FFFFFF'>
+      color='#FFE528'>
        "Sinergi,Tekuni & Terarah."
       </Typography>
       <Typography 
        sx={{
-        fontFamily:'Pompiere',
+        fontFamily:'Rhesmanisa',
         fontSize:{lg:'50px',md:'50px',sm:'20px',xs:'20px'},
         lineHeight:{lg:'66px',md:'66px',sm:'30px',xs:'30px'}
       }}

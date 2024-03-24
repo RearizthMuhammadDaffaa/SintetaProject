@@ -19,14 +19,16 @@ const Alumni = () => {
           justfyContent:'center',
           alignItems:'center',
           width:'100%',
+          
           gap:'32px',
           flexDirection:{md:'row',xs:'column'}
         }}
       >
         <Box sx={{
-          width:'100%'
+          width:'100%',
+         
         }}>
-          <img src={alumni} alt="" />
+          <img src={alumni} alt="" width="100%"/>
         </Box>
         <Box
           sx={{
@@ -69,10 +71,10 @@ const Alumni = () => {
           <Box
           sx={{
             width:{md:'526px',xs:'normal'},
-            height:'372px',
+            height:{md:'372px',xs:'normal'},
             gap:'10px',
             borderRadius:'32px',
-            padding:'32px',
+            padding:'32px 20px',
             border:'1px solid #E5EAF1',
             position:'relative',
            
@@ -83,7 +85,7 @@ const Alumni = () => {
                 width:'100%',
                 height:'100%',
                 position:'absolute',
-                left:'-30px',
+                left:{md:'-30px',xs:'-20px'},
                 top:'-30px'
               }}
             >
@@ -113,7 +115,8 @@ const Alumni = () => {
 
               <Box
                 sx={{
-                  
+                  width:'100%',
+                  height:'100%'
                 }}
               >
                  <Typography

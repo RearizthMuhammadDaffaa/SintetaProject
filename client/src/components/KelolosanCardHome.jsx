@@ -8,7 +8,7 @@ const KelolosanCardHome = ({data}) => {
    sx={{
     display:'flex',
     justifyContent:'center',
-    width:'329px',
+    width:{md:'329px',xs:'100%'},
     height:'412px',
     alignItems:'center',
     flexDirection:'column',

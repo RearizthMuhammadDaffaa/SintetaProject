@@ -35,7 +35,7 @@ const Navbar = () => {
              to='/'
           style={{
             fontSize:'16px',
-            color:'#2A4088',
+            color:'#4B4D52',
             textDecoration:'none'
             }}>Beranda</Link>
          
@@ -51,7 +51,7 @@ const Navbar = () => {
             to='/kelas'
           style={{
             fontSize:'16px',
-            color:'#2A4088',
+            color:'#4B4D52',
             textDecoration:'none'
             }}>Kelas</Link>
         
@@ -66,7 +66,7 @@ const Navbar = () => {
             to="/kelolosan"
           style={{
             fontSize:'16px',
-            color:'#2A4088',
+            color:'#4B4D52',
             textDecoration:'none'
             }}>Bukti Kelolosan</Link>
         
@@ -82,7 +82,7 @@ const Navbar = () => {
            to='/fasilitas'
           style={{
             fontSize:'16px',
-            color:'#2A4088',
+            color:'#4B4D52',
             textDecoration:'none'
             }}>Fasilitas</Link>
          
@@ -96,7 +96,7 @@ const Navbar = () => {
        
           <Link  style={{
             fontSize:'16px',
-            color:'#2A4088',
+            color:'#4B4D52',
             textDecoration:'none'
             }}>Promo Belajar</Link>
         
@@ -112,7 +112,7 @@ const Navbar = () => {
            to='/tentangkami'
           style={{
             fontSize:'16px',
-            color:'#2A4088',
+            color:'#4B4D52',
             textDecoration:'none'
             }}>Tentang Kami</Link>
            
@@ -190,40 +190,40 @@ const Navbar = () => {
           to='/'
           style={{
             fontSize:'14px',
-            color:'#2A4088',
+            color:'#4B4D52',
             textDecoration:'none'
             }}>Beranda</Link>
           <Link 
              to='/kelas'
           style={{
             fontSize:'14px',
-            color:'#2A4088',
+            color:'#4B4D52',
             textDecoration:'none'
             }}>Kelas</Link>
           <Link  
             to="/kelolosan"
           style={{
             fontSize:'14px',
-            color:'#2A4088',
+            color:'#4B4D52',
             textDecoration:'none'
             }}>Bukti Kelolosan</Link>
           <Link 
              to='/fasilitas'
           style={{
             fontSize:'14px',
-            color:'#2A4088',
+            color:'#4B4D52',
             textDecoration:'none'
             }}>Fasilitas</Link>
           <Link  style={{
            fontSize:'14px',
-            color:'#2A4088',
+           color:'#4B4D52',
             textDecoration:'none'
             }}>Promo Belajar</Link>
           <Link 
           to='/tentangkami'
           style={{
             fontSize:'14px',
-            color:'#2A4088',
+            color:'#4B4D52',
             textDecoration:'none'
             }}>Tentang Kami</Link>
             <Button variant="contained"
