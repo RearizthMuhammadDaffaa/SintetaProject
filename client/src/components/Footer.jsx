@@ -255,7 +255,7 @@ const Footer = () => {
         width:'284px',
         height:'221px',
         gap:'16px',
-        margin:{md:'0',xs:'20px 0'},
+       marginBottom:{md:'0',xs:'50px'}
       }}
       >
         <Typography
