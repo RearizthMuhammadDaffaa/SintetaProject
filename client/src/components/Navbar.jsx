@@ -127,19 +127,23 @@ const Navbar = () => {
            
        
             </ListItemButton>
-            <Button variant="contained"
-
-            sx={{
-              width:'100%',
-              height:'38px',
-              borderRadius:'12px',
-              padding:'8px 24px',
-              gap:'8px',
-              fontSize:'16px',
-              background:'#2A4088'
-            }}
-            size='small'
-            >TryOut</Button>
+            <a href="https://exam.bimbel-sinteta.my.id/"
+              target='_blank'
+            >
+               <Button variant="contained"
+              sx={{
+                width:'100%',
+                height:'38px',
+                borderRadius:'12px',
+                padding:'8px 24px',
+                gap:'8px',
+                fontSize:'16px',
+                background:'#2A4088'
+              }}
+              size='small'
+              >TryOut</Button>
+            </a>
+           
           </ListItem>
    
       </List>
@@ -226,10 +230,13 @@ const Navbar = () => {
             color:'#4B4D52',
             textDecoration:'none'
             }}>Tentang Kami</Link>
-            <Button variant="contained"
 
+             <a href="https://exam.bimbel-sinteta.my.id/"
+              target='_blank'
+            >
+               <Button variant="contained"
               sx={{
-                width:'109px',
+                width:'100%',
                 height:'38px',
                 borderRadius:'12px',
                 padding:'8px 24px',
@@ -238,7 +245,8 @@ const Navbar = () => {
                 background:'#2A4088'
               }}
               size='small'
-            >TryOut</Button>
+              >TryOut</Button>
+            </a>
         </Box>
 
         </Box>

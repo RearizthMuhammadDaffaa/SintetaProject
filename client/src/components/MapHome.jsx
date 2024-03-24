@@ -69,7 +69,7 @@ const MapHome = () => {
         sx={{
           width:'100%',
           height:'100%',
-         
+          zIndex:'5',
           backgroundRepeat: "no-repeat",
        
         }}
