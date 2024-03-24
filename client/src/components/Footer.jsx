@@ -314,7 +314,7 @@ const Footer = () => {
           <ListItem   
           >
             <ListItemText 
-              primary="Jl. Gatot Subroto Kav. 42, Karet Semanggi, Setiabudi, Jakarta Selatan, DKI Jakarta, 12930, Indonesia"
+              primary="Jl. Mardani Raya No.70 3, RT.11/RW.13, Cemp. Putih Bar., Kec. Cemp. Putih, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10560"
               sx={{
                 fontWeight:'400',
                 fontSize:'16px',
