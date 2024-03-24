@@ -7,6 +7,7 @@ import data from '../utils/data'
 import Slider from "react-slick";
 import { dataProgram } from '../utils/data'
 import SectionTitle from './SectionTitle'
+import pp from '../assets/imgProgram/Mask group (11).png'
 
 const Program = () => {
 
@@ -14,7 +15,7 @@ const Program = () => {
     arrow:true,
     dots: true,
     
-    speed: 500,
+    speed: 700,
     slidesToShow: 3,
     slidesToScroll: 3,
     responsive: [
@@ -28,7 +29,7 @@ const Program = () => {
       {
         breakpoint: 768, // Atur breakpoint untuk layar tablet
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 1,
           slidesToScroll: 1,
         },
       },
@@ -101,7 +102,7 @@ const Program = () => {
         alignItems:'center',
         flexDirection:'column',
        
-        overflow:'hidden',
+       
        
       }}
       >
@@ -112,80 +113,132 @@ const Program = () => {
           height:'100%',
           display:'flex',
           gap:'35px',
-          overflow:'hidden',
-          padding:'50px 0px',
-          justifyContent:'center',
-        
+         
+          
+          justifyContent:'space-between',
+          alignItems:'center',
           flexDirection:'column',
           position:"relative",
           
         }}
         >
 
-          <Slider {...settings} 
-          style={{
-            zIndex:'10',
-            display:'flex',
-            justifyContent:'center',
-            alignItems:'center'}}>
-         
-          {dataProgram.map((item)=>(
-             <Card sx={{ width:'290px',height:'100%',  zIndex:'10' ,flexShrink:'0' }}>
-             <CardMedia
-             
-               component="img"
-            
-               height="196"
-               image={item.logo}
-             />
-             <CardContent>
-               <Typography sx={{
-                fontWeight:'600',
-                fontSize:'20px',
-                lineHeight:'24px',
-                color:"#202020"
-               }}>
-                 {item.teks1}
-               </Typography>
-               <Typography 
-                 sx={{
-                     fontWeight:'600',
-                     fontSize:'24px',
-                     lineHeight:'28.8px',
-                    padding:'15px 0px',
-                     color:'#61B3E3'
-                 }}
-               >
-                {item.teks2}
-               </Typography>
-               <Typography 
-                 sx={{
-                     fontWeight:'400',
-                     fontSize:'16px',
-                     lineHeight:'22.2px',
-                     color:'#4D4D4D'
-                 }}
-               >
-              {item.teks3}
-               </Typography>
-               
+<Slider
+                style={{
+                  width:'100%',
+                  
+                }}
+               {...settings}>
+            {dataProgram.map((item)=>(
+               <Box
+               sx={{
+                 width:'390px',
+                 height:'100%',
+                 border:"1px solid #E5EAF1",
+                 display:'flex',
+                 justifyContent:'center',
+                 alignItems:'center',
+                 flexDirection:'column',
+                
+               }}
+             >
                <Box
                  sx={{
-                   width:'342px',
-                   heigh:'88px'
+                   background:'linear-gradient(#38B6FF,#A1C6DB)',
+                   width:'100%',
+                   height:'100%',
+                   display:'flex',
+                   justifyContent:'center',
+                   borderRadius:'16px 16px 0px 0px',
+                   alignItems:'center'
                  }}
                >
-                
-               </Box>
+     
+                 <img src={item.logo} alt="" width="100%"/>
+     
+                 {/* <Box 
+                   sx={{
+                     width:'167px',
+                     height:'167px',
+                     borderRadius:'100%',
+                     background:'#FFFFFF'
+                   }}
+                 >
+                 <img src="" alt="" />
+                 </Box> */}
                
+     
+               </Box>
+               <Box
+               sx={{
+                 background:'#ffffff',
+                 display:'flex',
+                 flexDirection:'column',
+                 alignSelf:'flex-start',
+                 marginTop:'10px',
+                 marginLeft:'5px',
+                 gap:'21px',
+                 padding:'20px 0'
+               }}
+             >
+               <Typography
+                 sx={{
+                   fontSize:'24px',
+                   lineHeight:'28.8px',
+                   color:'#202020',
+                   fontWeight:'600',
+                  
+                 }}
+               >
+               {item.teks1}
+               </Typography>
+               <Typography
+                 sx={{
+                   fontSize:'24px',
+                   lineHeight:'28.8px',
+                   color:'#61B3E3',
+                   fontWeight:'600',
+                  
+                 }}
+               >
+               {item.teks2}
+               </Typography>
+     
+               <Typography
+                 sx={{
+                   fontSize:'16px',
+                   lineHeight:'22.4px',
+                   color:'#4D4D4D',
+                   fontWeight:'400',
+                   
+                 }}
+               >
+               {item.teks3}
+               </Typography>
+             </Box>
+             </Box>
+            ))}
+          </Slider>
+
+          {/* <Box
+          sx={{
+            display:'flex',
+            width:'100%',
+            alignItems:'center',
+             justifyContent:'space-between',
+             margin:'0 10px'
+          }}
+          >
              
-             </CardContent>
-            
-           </Card>
-          ))}
 
-</Slider>
+          </Box> */}
 
+       
+       
+
+       
+
+     
           
      
       

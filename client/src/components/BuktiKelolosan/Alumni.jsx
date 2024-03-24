@@ -18,19 +18,23 @@ const Alumni = () => {
           display:'flex',
           justfyContent:'center',
           alignItems:'center',
+          width:'100%',
           gap:'32px',
           flexDirection:{md:'row',xs:'column'}
         }}
       >
-        <Box>
+        <Box sx={{
+          width:'100%'
+        }}>
           <img src={alumni} alt="" />
         </Box>
         <Box
           sx={{
+          
             display:'flex',
             justifyContent:'center',
             flexDirection:'column',
-
+            
           }}
         >
 
@@ -42,7 +46,7 @@ const Alumni = () => {
           <Typography
             sx={{
                 fontWeight:'600',
-                fontSize:'32px',
+                fontSize:{ xs: '28px', md: '32px' },
                 lineHeight:'38.4px',
                 color:'#38B6FF'
             }}
@@ -53,7 +57,7 @@ const Alumni = () => {
           <Typography
             sx={{
                 fontWeight:'500',
-                fontSize:'24px',
+                fontSize:{ xs: '20px', md: '24px' },
                 lineHeight:'28.8px',
                 color:'#797979'
             }}
@@ -64,7 +68,7 @@ const Alumni = () => {
          
           <Box
           sx={{
-            width:'526px',
+            width:{md:'526px',xs:'normal'},
             height:'372px',
             gap:'10px',
             borderRadius:'32px',

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import MenuIcon from '@mui/icons-material/Menu';
 const Navbar = () => {
   const container = window !== undefined ? () => window().document.body : undefined;
-  const drawerWidth = 240;
+  const drawerWidth = 140;
   // const { window } = props;
   const [mobileOpen,setMobileOpen] = useState(false);
 
@@ -155,8 +155,7 @@ const Navbar = () => {
         margin:'0',
         zIndex:'100000000',
         background:'#fff',
-        
-      
+        width: '100%'   
       }}
     >
       <Toolbar>

@@ -12,7 +12,8 @@ const BuktiKelolosan = () => {
    <Box
     sx={{
       width:'100%',
-      height:'100%'
+      height:'100%',
+      overflowX:'hidden'
     }}
    >
     <BuktiKelolosanBanner />

@@ -1,7 +1,7 @@
-import logo1 from "../assets/img/Mask group.png"
-import logo2 from "../assets/img/Mask group (1).png"
-import logo3 from "../assets/img/Mask group (2).png"
-import logo4 from "../assets/img/Mask group (3).png"
+import logo1 from "../assets/imgProgram/Mask group (11).png"
+import logo2 from "../assets/imgProgram/Mask group (12).png"
+import logo3 from "../assets/imgProgram/Mask group (13).png"
+import logo4 from "../assets/imgProgram/Mask group (14).png"
 
 import gambar1 from "../assets/img/Gambar (5).png"
 import gambar2 from "../assets/img/Gambar (6).png"
@@ -112,5 +112,8 @@ export const dataMap = [
     desk:"Jl. Buaran Raya blok A-16, RT.6/RW.13, Klender, Kec. Duren Sawit, Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta 13470" ,
   },
 ]
+
+
+
 
 export default data 

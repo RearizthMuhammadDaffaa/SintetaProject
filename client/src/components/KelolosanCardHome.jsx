@@ -1,8 +1,8 @@
 import { Box, Typography } from '@mui/material'
 import React from 'react'
-import pp from "../assets/imgCardSiswa/Mask group (4).png"
 
-const KelolosanCardHome = () => {
+
+const KelolosanCardHome = ({data}) => {
   return (
    <Box
    sx={{
@@ -19,7 +19,7 @@ const KelolosanCardHome = () => {
    }}
    >
 
-    <img src={pp} alt=""
+    <img src={data.img} alt=""
     style={{
       width:'201px',
       height:'201px'
@@ -45,7 +45,7 @@ const KelolosanCardHome = () => {
           marginBottom:'30px'
         }}
       >
-        Alyssa Parawansyah
+        {data.nama}
       </Typography>
 
       <Box
@@ -65,7 +65,7 @@ const KelolosanCardHome = () => {
             color:'#38B6FF'
           }}
         >
-        SMAN  114 JKT
+        {data.asalSekolah}
         </Typography>
 
         <Typography
@@ -77,7 +77,7 @@ const KelolosanCardHome = () => {
             color:'#38B6FF'
           }}
         >
-       Farmasi - POLTEKES JKT II
+      {data.kuliah}
         </Typography>
 
       </Box>

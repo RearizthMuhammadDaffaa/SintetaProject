@@ -5,7 +5,7 @@ import SectionTitle from './SectionTitle'
 import KelolosanCardHome from './KelolosanCardHome'
 import Slider from 'react-slick'
 import nextButton from "../assets/img/Next Button.png"
-
+import { data_Siswa } from '../utils/dataSiswa'
 
 
 
@@ -42,7 +42,7 @@ const BannerKelolosan = () => {
       {
         breakpoint: 768, // Atur breakpoint untuk layar tablet
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 1,
           slidesToScroll: 1,
         },
       },
@@ -60,7 +60,7 @@ const BannerKelolosan = () => {
   return (
    <Box
     sx={{
-      width:'100%',
+      width: '100%', 
       height:'100%',
       gap:'10px',
       padding:'100px 0px',
@@ -138,10 +138,10 @@ const BannerKelolosan = () => {
         sx={{
           width:{md:'80%',xs:'100%'},
           height:{md:'500px',xs:'100%'},
-  
+        
           display:'flex',
           justifyContent:'center',
-          flexDirection:'column',
+          flexDirection:'row',
           gap:'30px'
         }}
         >
@@ -150,10 +150,12 @@ const BannerKelolosan = () => {
             width:'100%',
           }}
         >
-        <KelolosanCardHome />
-        <KelolosanCardHome />
-        <KelolosanCardHome />
-        <KelolosanCardHome />
+          {data_Siswa.map((item)=>(
+              <KelolosanCardHome data={item}/>
+          ))}
+        
+        
+       
         </Slider>
         </Box>
        
