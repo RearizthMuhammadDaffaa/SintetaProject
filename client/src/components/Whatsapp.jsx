@@ -37,6 +37,9 @@ const IconWA = () =>{
     }}>
        <a href="https://wa.me/6281380327556"
         target='_blank'
+        style={{
+          zIndex:'300'
+        }}
       >
      
       
@@ -65,6 +68,7 @@ const Whatsapp = () => {
   return (
     <Box sx={{ zIndex:'10', height: '100%', position: 'relative'}}>
     <SpeedDial
+      
       ariaLabel="SpeedDial basic example"
       sx={{ position: 'fixed', bottom: 16, right: 16 }}
       icon={<IconWA />}

@@ -80,7 +80,7 @@ const MapHome = () => {
               width:'390px',
               height:'512px',
               gap:'30px',
-              zIndex:'10000'
+              zIndex:'5'
             }}>
               <CardMedia 
                 component='img'
