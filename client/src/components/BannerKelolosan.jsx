@@ -1,4 +1,4 @@
-import { Box, Typography } from '@mui/material'
+import { Box, Button, Typography } from '@mui/material'
 import React from 'react'
 import BuktiKelolosan from "../assets/img/Gambar (1).png"
 import SectionTitle from './SectionTitle'
@@ -6,6 +6,7 @@ import KelolosanCardHome from './KelolosanCardHome'
 import Slider from 'react-slick'
 import nextButton from "../assets/img/Next Button.png"
 import { data_Siswa } from '../utils/dataSiswa'
+import { Link } from 'react-router-dom'
 
 
 
@@ -163,7 +164,22 @@ const BannerKelolosan = () => {
 
       </Box>
     </Box>
+    <Link
+      to="/kelolosan"
+    >
+    <Button sx={{
+        gap:'10px',
+        marginBottom:'100px',
+        background:'#38B6FF',
+        marginTop:'50px'
+       }} variant='contained'>
+        
+        Selengkapnya
+       
 
+        </Button>
+    </Link>
+   
    </Box>
   )
 }

@@ -1,10 +1,12 @@
-import { Box, Typography } from '@mui/material'
+import { Box, Button, Typography } from '@mui/material'
 import React from 'react'
 
 
 const KelolosanCardHome = ({data}) => {
   return (
    <Box
+   
+   className='card-kelolosan-banner'
    sx={{
     display:'flex',
     justifyContent:'center',
@@ -15,7 +17,7 @@ const KelolosanCardHome = ({data}) => {
     padding:'32px 7px',
     borderRadius:'32px',
     gap:'40px',
-    background:'linear-gradient(#38B6FF,#A1C6DB)',
+   
    }}
    >
 
@@ -84,7 +86,7 @@ const KelolosanCardHome = ({data}) => {
       
     </Box>
 
-
+    
    </Box>
   )
 }

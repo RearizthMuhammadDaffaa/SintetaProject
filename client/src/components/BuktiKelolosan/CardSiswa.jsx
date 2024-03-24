@@ -6,6 +6,8 @@ const CardSiswa = ({data}) => {
   
   return (
     <Box
+    component="div"
+   
     sx={{
       width:{md:'604px',xs:'100%'},
       height:{md:'318px',xs:'100%'},
@@ -71,7 +73,7 @@ const CardSiswa = ({data}) => {
           color:'#4D4D4D'
         }}
       >
-        {data.desk.length > 200 ? data.desk.substring(0,200) + "..." : data.desk}
+        {data.desk.length > 200 ? data.desk.substring(0,150) + "..." : data.desk}
       </Typography>
       </Box>
       
@@ -79,11 +81,12 @@ const CardSiswa = ({data}) => {
     </Box>
       
       <Box
+       className='container-siswa'
         sx={{
           display:'flex',
           justifyContent:'center',
           alignItems:'center',
-          background:'linear-gradient(#38B6FF,#A1C6DB)',
+          
           width:'100%',
           order:{md:'0',xs:'0'}
         }}

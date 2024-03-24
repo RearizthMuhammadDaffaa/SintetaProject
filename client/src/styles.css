@@ -14,3 +14,10 @@ html{
   column-gap: 20px;
  
 }
+
+.container-siswa{
+  background-image: url('assets/imgSiswa/Card testimoni Siswa Lolos.png');
+}
+.card-kelolosan-banner{
+  background-image: url('assets/imgSiswa/Card Siswa Lolos.png');
+}
