@@ -29,7 +29,7 @@ const SectionCerita = () => {
         }}
       >
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/c-ptvXgUfdg?si=YlEONGgFaUMS6MB3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/H0FswjO4caE?si=fSIQ4F5AZSpl9NhZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
       </Box>
 

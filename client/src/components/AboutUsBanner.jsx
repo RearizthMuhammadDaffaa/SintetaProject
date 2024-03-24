@@ -14,15 +14,16 @@ const AboutUsBanner = () => {
   sx={{
     marginTop:'100px',
     width:'100%',
-    padding:{md:'40px 100px',lg:'40px 100px',sm:'40px 0px',xs:'40px 0px'},
+    padding:{md:'40px 100px',xs:'40px 0px'},
     height:'630px',
+    boxSizing:'border-box'
   }}
    >
      
     <Box 
     sx={{
       width:'100%',
-      height:{md:'100%',lg:'100%',xs:'70%',sm:'70%'},
+      height:"100%",
       background:'linear-gradient(#38B6FF,#A1C6DB)',
       display:'flex',
       flexDirection:'column',
@@ -34,7 +35,7 @@ const AboutUsBanner = () => {
       <Typography 
      
       sx={{
-        fontSize:{lg:'50px',md:'50px',sm:'20px',xs:'20px'}
+        fontSize:{lg:'50px',md:'50px',sm:'30px',xs:'30px'}
       }}
       fontWeight='800'
       lineHeight='66px'
@@ -45,7 +46,7 @@ const AboutUsBanner = () => {
       <Typography 
        sx={{
         fontFamily:'Rhesmanisa',
-        fontSize:{lg:'50px',md:'50px',sm:'20px',xs:'20px'},
+        fontSize:{lg:'50px',md:'50px',sm:'30px',xs:'30px'},
         lineHeight:{lg:'66px',md:'66px',sm:'30px',xs:'30px'}
       }}
       fontWeight='400'
@@ -54,14 +55,7 @@ const AboutUsBanner = () => {
       color='#FFFFFF'>
       Better Eduaction for Better Future
       </Typography>
-      <Box
-        sx={{
-          width:{md:'700px',lg:'700px',sm:'100%',xs:'100%'}
-        }}
-      >
-      
-      </Box>
-
+     
      
      
     </Box>

@@ -42,7 +42,7 @@ const HeroBanner = () => {
       fontWeight='800'
       align='center'
       color='#FFFFFF'>
-        <span style={{color:'#FFE528'}}>Sinteta</span>  Is Here!!
+        <span style={{color:'#FFE528'}}>SINTETA</span>  Is Here!!
       </Typography>
       <Typography 
        sx={{

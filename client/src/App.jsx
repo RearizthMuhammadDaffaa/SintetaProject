@@ -10,6 +10,7 @@ import Kelas from './pages/Kelas'
 import KelasDetail from './pages/KelasDetail'
 import './styles.css'
 import BuktiKelolosan from './pages/BuktiKelolosan'
+import Whatsapp from './components/Whatsapp'
 
 function App() {
  
@@ -19,7 +20,7 @@ function App() {
       padding:'0',
       margin:'0',
       width:'100%',
-      height:'100%'
+      height:'100%',
     }}>
     
       <Navbar />
@@ -31,7 +32,9 @@ function App() {
         <Route path='/kelas/:id' element={<KelasDetail />}/>
         <Route path='/kelolosan' element={<BuktiKelolosan />}/>
       </Routes>
+      <Whatsapp />
       <Footer />
+     
     </Box>
   )
 }

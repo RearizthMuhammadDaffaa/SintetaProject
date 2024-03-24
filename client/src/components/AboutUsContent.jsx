@@ -8,7 +8,7 @@ const AboutUsContent = () => {
     sx={{
       width:'100%',
       height:'100%',
-      padding:{md:'120px 0px',xs:' 120px 0px'},
+      padding:{md:'80px 0px',xs:' 120px 0px'},
       marginBottom:{md:'0',xs:'300px'},
       gap:'10px'
     }}
@@ -26,10 +26,11 @@ const AboutUsContent = () => {
 
       <Box
         sx={{
-          width:{md:'40%',xs:'100%'},
+          width:{md:'40%',xs:'80%'},
           height:'393px',
           border:'2px solid #E5EAF1',
-          borderRadius:'16px'
+          borderRadius:'16px',
+          alignSelf:{md:'normal',xs:'center'}
         }}
       >
         <img src={logo} alt="" width='100%' height='100%'/>

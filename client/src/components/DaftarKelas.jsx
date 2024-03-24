@@ -74,7 +74,7 @@ const DaftarKelas = () => {
             width:'390px',
             height:'512px',
             gap:'30px',
-            zIndex:'10000'
+            zIndex:'0'
           }}>
             <CardMedia 
               component='img'
