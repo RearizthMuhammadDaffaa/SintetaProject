@@ -129,7 +129,10 @@ const MapHome = () => {
                     gap:'10px'
                   }}
                 >
-                   <Button variant='contained' sx={{background:'#38B6FF',gap:'20px'}}> 
+                  <a href={`https://wa.me/${item.noHp}`}
+                  target='_blank'
+                  >
+                       <Button variant='contained' sx={{background:'#38B6FF',gap:'20px'}}> 
                   Hubungi Cabang
 
                   
@@ -146,6 +149,8 @@ const MapHome = () => {
                     </svg>
 
                 </Button>
+                  </a>
+                
                 <a href={item.linkMap} target='_blank'>
                 <Button variant='contained' sx={{background:'#38B6FF',gap:'20px'}}> 
                   Buka di Map

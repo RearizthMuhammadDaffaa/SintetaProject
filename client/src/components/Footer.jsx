@@ -299,7 +299,7 @@ const Footer = () => {
           <ListItem   
           >
             <ListItemText 
-              primary="+62 854-3428-0190"
+              primary="+6281-3803-27556"
               sx={{
                 fontWeight:'400',
                 fontSize:'16px',
