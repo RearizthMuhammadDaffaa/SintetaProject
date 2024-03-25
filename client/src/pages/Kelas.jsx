@@ -11,7 +11,8 @@ const Kelas = () => {
     sx={{
       width:'100%',
       height:'100%',
-      padding:'120px 0px'
+      padding:'120px 0px',
+      overflowX:'hidden'
     }}
     >
       <AboutKelas />
