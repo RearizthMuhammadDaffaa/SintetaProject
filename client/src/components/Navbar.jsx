@@ -138,7 +138,7 @@ const Navbar = () => {
                 padding:'8px 24px',
                 gap:'8px',
                 fontSize:'16px',
-                background:'#2A4088'
+                background:'#38B6FF'
               }}
               size='small'
               >TryOut</Button>
@@ -191,6 +191,7 @@ const Navbar = () => {
          
         }}>
           <Link 
+          className='active-link'
           to='/'
           style={{
             fontSize:'14px',
@@ -242,7 +243,7 @@ const Navbar = () => {
                 padding:'8px 24px',
                 gap:'8px',
                 fontSize:'16px',
-                background:'#2A4088'
+                background:'#38B6FF'
               }}
               size='small'
               >TryOut</Button>

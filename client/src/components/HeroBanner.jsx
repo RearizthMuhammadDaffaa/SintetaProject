@@ -1,8 +1,14 @@
 import styled from '@emotion/styled';
 import { Box, Button, Container, Grid, Typography } from '@mui/material'
-import React from 'react'
+import React, { useEffect } from 'react'
 
 const HeroBanner = () => {
+
+  useEffect(()=>{
+    fetch("https://localhost:3000/banner")
+  .then(res => res.json())
+.then(data => console.log(data))
+  },[])
 
   const StyledButton = styled(Button)`
     &:hover {

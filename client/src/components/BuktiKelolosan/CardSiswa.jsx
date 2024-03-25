@@ -21,7 +21,7 @@ const CardSiswa = ({data}) => {
       sx={{
         width:'100%',
         gap:'24px',
-        padding:'22px',
+        padding:'12px',
         order:{md:'0',xs:'1'}
       }}
     >
@@ -60,8 +60,10 @@ const CardSiswa = ({data}) => {
       </Typography>
       <Box
         sx={{
-          
-          marginTop:'30px'
+          border:'1px solid #E5EAF180',
+          borderRadius:'16px',
+          marginTop:'30px',
+          padding:'5px'
         }}
       >
       <Typography
@@ -98,6 +100,7 @@ const CardSiswa = ({data}) => {
         }}
       >
          <img src={data.img} alt="" width="100%" height="100%"/>
+        
       </Box>
        
       </Box>

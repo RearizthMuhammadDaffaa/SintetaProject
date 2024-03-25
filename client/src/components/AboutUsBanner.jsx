@@ -41,7 +41,7 @@ const AboutUsBanner = () => {
       lineHeight='66px'
       align='center'
       color='#FFE528'>
-       "Sinergi,Tekuni & Terarah."
+       "Sinergi,Terukur & Terarah."
       </Typography>
       <Typography 
        sx={{

@@ -46,7 +46,7 @@ const HomeTestimoni = () => {
       sx={{
         width:'100%',
         gap:'24px',
-        padding:'22px',
+        padding:'12px',
         order:{md:'0',xs:'1'}
       }}
     >
@@ -84,8 +84,10 @@ const HomeTestimoni = () => {
       </Typography>
       <Box
         sx={{
-          
-          marginTop:'30px'
+          border:'1px solid #E5EAF180',
+          borderRadius:'16px',
+          marginTop:'30px',
+          padding:'10px'
         }}
       >
       <Typography
@@ -143,7 +145,7 @@ const HomeTestimoni = () => {
       sx={{
         width:'100%',
         gap:'22px',
-        padding:'22px',
+        padding:'12px',
         order:{md:'0',xs:'1'}
       }}
     >
@@ -181,8 +183,10 @@ const HomeTestimoni = () => {
       </Typography>
       <Box
         sx={{
-          
-          marginTop:'30px'
+          border:'1px solid #E5EAF180',
+          borderRadius:'16px',
+          marginTop:'30px',
+          padding:'10px'
         }}
       >
       <Typography

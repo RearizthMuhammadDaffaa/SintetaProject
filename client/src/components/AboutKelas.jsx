@@ -4,10 +4,7 @@ import logo from '../assets/img/Boy 1.png'
 
 const AboutKelas = () => {
   return (
-    <Box
-
-   
-    >
+    <Box>
         <Box
     sx={{
       width:'100%',
@@ -27,7 +24,7 @@ const AboutKelas = () => {
         width:{md:'516px',xs:'100%'},
         height:{md:'456px',xs:'100%'},
         marginLeft:{md:'20px',xs:'0'},
-        background:'#2A4088',
+        background:'#11B1E2',
         borderRadius:'40px 40px 0px 0px'
       }}
     >
@@ -51,14 +48,14 @@ const AboutKelas = () => {
         fontWeight:'700',
         fontSize:'48px',
         lineHeight:'53.8px',
-        color:'#2A4088'
+        color:'#11B1E2'
       }}
       >
       Siap PTN <span style={{color:'#FFE528'}}>100%</span> ?
       </Typography>
 
       <Typography>
-        Kami adalah bimbingan belajar yang mengutamakan persiapan siswa untuk diterima di perguruan tinggi dengan tingkat keberhasilan 100%. Dengan kurikulum yang terstruktur, tim pengajar ahli, dan pendekatan holistik, kami memastikan setiap siswa mendapatkan pemahaman mendalam tentang materi pelajaran, kepercayaan diri, dan keterampilan ujian yang diperlukan untuk sukses. Bergabunglah dengan kami untuk membangun masa depan akademis Anda dengan percaya diri dan sukses.  
+        Kami adalah bimbingan belajar yang mengutamakan persiapan siswa untuk diterima di perguruan tinggi dengan tingkat keberhasilan 100%. Dengan kurikulum yang terstruktur, tim pengajar ahli, dan pendekatan holistik, kami memastikan setiap siswa mendapatkan pemahaman mendalam tentang materi pelajaran, kepercayaan diri, dan keterampilan ujian yang diperlukan untuk sukses. Bergabunglah dengan kami untuk membangun masa depan akademis Anda dengan percaya diri dan sukses.
   
       </Typography>
       

@@ -17,7 +17,7 @@ const KelolosanCardHome = ({data}) => {
     padding:'32px 7px',
     borderRadius:'32px',
     gap:'40px',
-   
+    
    }}
    >
 
