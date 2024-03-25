@@ -69,13 +69,13 @@ export const dataProgram = [
     logo:logo3,
     teks1:'SIPOL',
     teks2:'“SINTETA Intensive Program Offline & Online”',
-    teks3:'Prograam Pendampingan Belajar Siswa secara intensif untuk persiapan menghadapi PTS,AAT,UTBK,SBMPTN & UM'
+    teks3:'Program Pendampingan Belajar Siswa secara intensif untuk persiapan menghadapi PTS,AAT,UTBK,SBMPTN & UM'
   },
   {
     logo:logo4,
-    teks1:'SIP Grow',
-    teks2:'“SINTETA Personal Grow”',
-    teks3:'Program Analisis,monitoring & pengarahan progress nilai raport siswa untuk mempersiapkan diri menuju Jenjang Perguruan  Tingggi'
+    teks1:'TOS',
+    teks2:'“Try Out Online SINTETA”',
+    teks3:'Prograam Evaluasi Pembelajaran  untuk mengukurkemampuan siswa setiap mata pelajaran yang dilakukan secara berkala'
   },
  
 ]
