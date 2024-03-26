@@ -348,7 +348,7 @@ const SectionContent = () => {
       alignSelf="flex-start"
       px={4}
       >
-        <Typography variant='h6' fontWeight='600' fontSize="24px" lineHeight="28px">
+        <Typography variant='h6' fontWeight='600' fontSize={{md:"24px",xs:'20px'}} lineHeight="28px">
           Para Siswa yang Lolos PTN Impian
         </Typography>
         <Typography variant='body2' >
@@ -422,35 +422,7 @@ const SectionContent = () => {
           </Typography>
 
         </Box>
-        <Box
-        component="div"      
-        sx={{
-          padding:'8px 16px',
-          border:'1px solid #E5EAF1',
-          background:'#E5EAF1',
-          height:'35px',
-          width:'52px',
-          gap:'8px',
-          borderRadius:'20px',
-          display:'flex',
-          justifyContent:'center',
-          alignItems:'center',
-          marginBottom:'20px',
-          cursor:'pointer'
-        }}
-        >
-          <Typography
-            sx={{
-              fontWeight:'600',
-              fontSize:'12px',
-              lineHeight:'16.8px',
-              color:'#A6A6A6'
-            }}
-          >
-            X
-          </Typography>
-
-        </Box>
+     
      
         
 
