@@ -129,8 +129,9 @@ const Program = () => {
                   
                 }}
                {...settings}>
-            {dataProgram.map((item)=>(
+            {dataProgram.map((item,i)=>(
                <Box
+               key={i}
                sx={{
                  width:'390px',
                  height:'100%',

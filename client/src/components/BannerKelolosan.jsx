@@ -151,8 +151,8 @@ const BannerKelolosan = () => {
             width:'100%',
           }}
         >
-          {data_Siswa.map((item)=>(
-              <KelolosanCardHome data={item}/>
+          {data_Siswa.map((item,i)=>(
+              <KelolosanCardHome data={item} key={i}/>
           ))}
         
         

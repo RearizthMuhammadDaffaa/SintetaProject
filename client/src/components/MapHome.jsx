@@ -75,8 +75,10 @@ const MapHome = () => {
         }}
         >
 
-          {data_cabang.map((item)=>(
-             <Card sx={{
+          {data_cabang.map((item,i)=>(
+             <Card
+             key={i}
+             sx={{
               width:'390px',
               height:'512px',
               gap:'30px',

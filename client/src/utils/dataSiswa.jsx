@@ -53,6 +53,6 @@ export const data_Siswa = [
     asalSekolah:"SMAN 50 Jakarta",
     kuliah:"Analisis Farmasi  & Makanan Poltekes Jakarta II",
     desk: "dari segi tentornya enak bgt bgt bgt karena bisa berbaur sama murid muridnya, tentornya ga yg mengintimidasi alias chill🤓.",
-    }
+    },
 
 ]

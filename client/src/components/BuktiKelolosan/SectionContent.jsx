@@ -4,12 +4,28 @@ import SectionTitle from '../SectionTitle'
 import CardSiswa from './CardSiswa'
 import { data_Siswa } from '../../utils/dataSiswa'
 import { useState } from 'react'
+import TableKelolosan from './TableKelolosan'
 
 
 const SectionContent = () => {
   const [active,setActive] = useState(false);
   const [search,setSearch] = useState("");
   const [data,setData] = useState(data_Siswa);
+  const [selectedSiswa, setSelectedSiswa] = useState(null); // State untuk menyimpan data siswa yang dipilih
+  const [display,setDisplay] = useState('flex')
+
+  // Fungsi untuk menampilkan CardSiswa
+  const handleShowCard = (siswa) => {
+    setSelectedSiswa(siswa);
+    setDisplay('none')
+  };
+
+  // Fungsi untuk menyembunyikan CardSiswa
+  const handleCloseCard = () => {
+    setSelectedSiswa(null);
+    setDisplay('flex')
+  };
+
 
   const handleSearchChange = (event) => {
     setSearch(event.target.value);
@@ -28,7 +44,7 @@ const SectionContent = () => {
         justifyContent:'center',
         alignItems:'center',
         flexDirection:'column',
-        marginTop:'100px'
+        marginTop:'100px',
       }}
     >
 
@@ -311,6 +327,8 @@ const SectionContent = () => {
 
       </Box>
 
+   
+
 {/* card list */}
        <Stack
         justifyContent='center'
@@ -320,27 +338,157 @@ const SectionContent = () => {
         gap="10px"
         mb={5}
        > 
-       {data.map((item)=>(
-           <CardSiswa data={item}/>
-       ))}          
+
+<Box
+      display="flex"
+      
+     
+      flexDirection="column"
+      width={{md:'100%',xs:'50%'}}
+      alignSelf="flex-start"
+      px={4}
+      >
+        <Typography variant='h6' fontWeight='600' fontSize="24px" lineHeight="28px">
+          Para Siswa yang Lolos PTN Impian
+        </Typography>
+        <Typography variant='body2' >
+        Lihat testimoni mereka tentang bimbel SINTETA
+        </Typography>
+
+        <Box
+        sx={{
+          display:'flex',
+          alignItems:'center',
+          gap:'20px',
+          marginTop:'10px'
+        }}
+      >
+        <Box
+        component="div"      
+        sx={{
+          padding:'8px 16px',
+          border:'1px solid #E5EAF1',
+          background:'#E5EAF1',
+          width:'60px',
+          height:'33px',
+          gap:'8px',
+          borderRadius:'20px',
+          display:'flex',
+          justifyContent:'center',
+          alignItems:'center',
+          marginBottom:'20px',
+          cursor:'pointer'
+        }}
+        >
+          <Typography
+            sx={{
+              fontWeight:'600',
+              fontSize:'12px',
+              lineHeight:'16.8px',
+              color:'#4D4D4D'
+            }}
+          >
+            SMA
+          </Typography>
+
+        </Box>
+
+        <Box
+        component="div"      
+        sx={{
+          padding:'8px 16px',
+          border:'1px solid #E5EAF1',
+          background:'#E5EAF1',
+          height:'33px',
+          width:'63px',       
+          gap:'8px',
+          borderRadius:'20px',
+          display:'flex',
+          justifyContent:'center',
+          alignItems:'center',
+          marginBottom:'20px',
+          cursor:'pointer'
+        }}
+        >
+          <Typography
+            sx={{
+              fontWeight:'600',
+              fontSize:'12px',
+              lineHeight:'16.8px',
+              color:'#A6A6A6'
+            }}
+          >
+            2024
+          </Typography>
+
+        </Box>
+        <Box
+        component="div"      
+        sx={{
+          padding:'8px 16px',
+          border:'1px solid #E5EAF1',
+          background:'#E5EAF1',
+          height:'35px',
+          width:'52px',
+          gap:'8px',
+          borderRadius:'20px',
+          display:'flex',
+          justifyContent:'center',
+          alignItems:'center',
+          marginBottom:'20px',
+          cursor:'pointer'
+        }}
+        >
+          <Typography
+            sx={{
+              fontWeight:'600',
+              fontSize:'12px',
+              lineHeight:'16.8px',
+              color:'#A6A6A6'
+            }}
+          >
+            X
+          </Typography>
+
+        </Box>
+     
+        
+
+      </Box>
+ 
+      </Box>
+
+      {selectedSiswa && (
+        <CardSiswa data={selectedSiswa}/>
+      )}
+
+       {/* {data.map((item,i)=>(
+           <CardSiswa data={item} key={i}/>
+       ))}           */}
+       <TableKelolosan  search={search} handleCloseCard={handleCloseCard} handleShowCard={handleShowCard} selectedSiswa={selectedSiswa} display={display}/>
      
       
              
        </Stack>
 
+       {selectedSiswa && (
+           <Button
+           onClick={handleCloseCard}
+          sx={{
+           gap:'10px',
+           marginBottom:'100px',
+           background:'#38B6FF'
+          }} variant='contained'>
+           
+           Lihat Semua
+           <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+   <path d="M14.1836 20.4805C14.4766 20.4805 14.7695 20.3633 14.9688 20.1406L24.0391 10.8477C24.2383 10.6484 24.3555 10.3906 24.3555 10.0977C24.3555 9.48828 23.8984 9.01953 23.2891 9.01953C22.9961 9.01953 22.7266 9.13672 22.5273 9.32422L13.5508 18.5H14.8047L5.82812 9.32422C5.64062 9.13672 5.37109 9.01953 5.06641 9.01953C4.45703 9.01953 4 9.48828 4 10.0977C4 10.3906 4.11719 10.6484 4.31641 10.8594L13.3867 20.1406C13.6094 20.3633 13.8789 20.4805 14.1836 20.4805Z" fill="white"/>
+   </svg>
+   
+           </Button>
+       )}
      
-       <Button sx={{
-        gap:'10px',
-        marginBottom:'100px',
-        background:'#38B6FF'
-       }} variant='contained'>
-        
-        Lihat Semua
-        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M14.1836 20.4805C14.4766 20.4805 14.7695 20.3633 14.9688 20.1406L24.0391 10.8477C24.2383 10.6484 24.3555 10.3906 24.3555 10.0977C24.3555 9.48828 23.8984 9.01953 23.2891 9.01953C22.9961 9.01953 22.7266 9.13672 22.5273 9.32422L13.5508 18.5H14.8047L5.82812 9.32422C5.64062 9.13672 5.37109 9.01953 5.06641 9.01953C4.45703 9.01953 4 9.48828 4 10.0977C4 10.3906 4.11719 10.6484 4.31641 10.8594L13.3867 20.1406C13.6094 20.3633 13.8789 20.4805 14.1836 20.4805Z" fill="white"/>
-</svg>
-
-        </Button>
+      
     </Box>
   )
 }
