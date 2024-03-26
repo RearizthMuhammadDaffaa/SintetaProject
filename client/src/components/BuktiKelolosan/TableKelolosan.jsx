@@ -35,18 +35,6 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   },
 }));
 
-function createData(name, calories, fat, carbs, protein) {
-  return { name, calories, fat, carbs, protein };
-}
-
-const rows = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
-];
-
 
 
 
@@ -74,8 +62,16 @@ const currentData = filteredData.slice(indexOfFirstItem, indexOfLastItem);
 const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
-    <>
-    <TableContainer component={Paper} sx={{overflowX:'scroll',display:display}}>
+    <Box
+      sx={{
+        display:display,
+        flexDirection:'column',
+        justifyContent:'center',
+        alignItems:'center',
+        width:'100%'
+      }}
+    >
+    <TableContainer component={Paper} sx={{maxWidth: {md:'100%',sm:'90%',xs:'50%'}, overflow:'auto',display:display,flexDirection:'column'}}>
       <Table sx={{ minWidth: 700 }} aria-label="customized table">
         <TableHead>
           <TableRow>
@@ -158,7 +154,7 @@ const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
         </Button>
       </Box>
-    </>
+    </Box>
   )
 }
 
