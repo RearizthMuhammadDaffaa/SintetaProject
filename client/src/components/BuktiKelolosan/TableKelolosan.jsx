@@ -11,6 +11,7 @@ import { data_Siswa } from '../../utils/dataSiswa';
 import { Link } from 'react-router-dom';
 import { Box, Button, Typography } from '@mui/material';
 import CardSiswa from './CardSiswa';
+import { dataSiswaKelolosan } from '../../utils/dataSiswaKelolosan';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -39,25 +40,32 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 
 
 
-const TableKelolosan = ({search,handleShowCard,handleCloseCard,selectedSiswa,display}) => {
-  const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage] = useState(10);
+const TableKelolosan = ({currentPage,setCurrentPage,itemsPerPage,search,handleShowCard,handleCloseCard,selectedSiswa,display}) => {
+ 
 
   const pageNumbers = [];
+  const allData = dataSiswaKelolosan.length
 
   
 
-  const filteredData = data_Siswa.filter((siswa) =>
-  siswa.nama.toLowerCase().includes(search.toLowerCase())
-);
+//   const filteredData = dataSiswaKelolosan.filter((siswa) =>
+//   siswa.nama.toLowerCase().includes(search.toLowerCase()) || siswa.asalSekolah.toLowerCase().includes(search.toLowerCase()) || siswa.ptn.toLowerCase().includes(search.toLowerCase())
+// );
 
-for(let i = 1; i <= Math.ceil(filteredData.length/ itemsPerPage); i++) {
+for(let i = 1; i <= Math.ceil(allData/ itemsPerPage); i++) {
   pageNumbers.push(i)
 } 
 
 const indexOfLastItem = currentPage * itemsPerPage;
 const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-const currentData = filteredData.slice(indexOfFirstItem, indexOfLastItem);
+// const currentData = filteredData.slice(indexOfFirstItem, indexOfLastItem);
+const currentData = dataSiswaKelolosan
+.filter((siswa) => 
+  siswa.nama.toLowerCase().includes(search.toLowerCase()) ||
+  siswa.asalSekolah.toLowerCase().includes(search.toLowerCase()) ||
+  siswa.ptn.toLowerCase().includes(search.toLowerCase())
+)
+.slice(indexOfFirstItem, indexOfLastItem);
 
 const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
@@ -77,10 +85,10 @@ const paginate = (pageNumber) => setCurrentPage(pageNumber);
           <TableRow>
             <StyledTableCell >No</StyledTableCell>
             <StyledTableCell align="center">Nama</StyledTableCell>
-            <StyledTableCell align="center">Sekolah</StyledTableCell>
-            <StyledTableCell align="center">Universitas</StyledTableCell>
-            <StyledTableCell align="center">Tahun Lolosan</StyledTableCell>
-            <StyledTableCell align="center">Review</StyledTableCell>
+            <StyledTableCell align="center">Asal Sekolah</StyledTableCell>
+            <StyledTableCell align="center">PTN</StyledTableCell>
+            <StyledTableCell align="center">Jurusan</StyledTableCell>
+           
           </TableRow>
         </TableHead>
         <TableBody>
@@ -92,9 +100,10 @@ const paginate = (pageNumber) => setCurrentPage(pageNumber);
               </StyledTableCell>
               <StyledTableCell align="center">{row.nama}</StyledTableCell>
               <StyledTableCell align="center">{row.asalSekolah}</StyledTableCell>
-              <StyledTableCell align="center">{row.kuliah}</StyledTableCell>
-              <StyledTableCell align="center">2024</StyledTableCell>
-              <StyledTableCell align="center">
+              <StyledTableCell align="center">{row.ptn}</StyledTableCell>
+              <StyledTableCell align="center">{row.jurusan}</StyledTableCell>
+
+              {/* <StyledTableCell align="center">
                 <Link 
                 style={{
                   fontSize:'16px',
@@ -105,7 +114,7 @@ const paginate = (pageNumber) => setCurrentPage(pageNumber);
                 component="button" onClick={() => handleShowCard(row)}>
                   Lihat Testimoni
                 </Link>
-              </StyledTableCell>
+              </StyledTableCell> */}
             </StyledTableRow>
           
           ))
@@ -123,8 +132,11 @@ const paginate = (pageNumber) => setCurrentPage(pageNumber);
           </svg>
 
         </Button>
+        
        { pageNumbers.map(number => (
             <Box 
+            onClick={() => paginate(number)}
+            component='div'
              key={number}
             sx={{ 
          
@@ -136,14 +148,15 @@ const paginate = (pageNumber) => setCurrentPage(pageNumber);
               border:'1px solid #E5EAF1' ,
               borderRadius:number == 1 ? '8px 0px 0px 8px': number == pageNumbers.length? '0px 8px 8px 0px' :'0px',
               padding:'4px 8px',
-              background:number == currentPage ?'#38B6FF' :'#FFFFFF' 
+              background:number == currentPage ?'#38B6FF' :'#FFFFFF' ,
+              cursor:'pointer'
              
              }}>
               {number}  
            </Box>
        ))}
         <Button
-          disabled={currentPage === Math.ceil(filteredData.length / itemsPerPage)}
+          disabled={currentPage === Math.ceil(allData / itemsPerPage)}
           onClick={() => paginate(currentPage + 1)}
           variant="outlined"
         >

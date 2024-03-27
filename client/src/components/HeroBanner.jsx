@@ -4,11 +4,27 @@ import React, { useEffect } from 'react'
 
 const HeroBanner = () => {
 
-  useEffect(()=>{
-    fetch("https://localhost:3000/banner")
-  .then(res => res.json())
-.then(data => console.log(data))
-  },[])
+
+  // let data = {
+  //   email:'Caraka.Feil@yahoo.com',
+  //   password:'12345678'
+   
+
+  // }
+
+  // const requestOptions = {
+  //   method: 'POST',
+  //   headers: {
+  //     'Content-Type': 'application/json' // Tentukan tipe konten yang dikirimkan (dalam hal ini JSON)
+  //   },
+  //   body: JSON.stringify(data) // Ubah objek JavaScript menjadi string JSON
+  // };
+
+  // useEffect(()=>{
+  //   fetch("https://api.bimbel-sinteta.id/api/v1/login",requestOptions)
+  //   .then(res => res.json())
+  //   .then(data => console.log(data))
+  // },[])
 
   const StyledButton = styled(Button)`
     &:hover {

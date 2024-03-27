@@ -13,6 +13,8 @@ const SectionContent = () => {
   const [data,setData] = useState(data_Siswa);
   const [selectedSiswa, setSelectedSiswa] = useState(null); // State untuk menyimpan data siswa yang dipilih
   const [display,setDisplay] = useState('flex')
+  const [currentPage, setCurrentPage] = useState(1);
+  const [itemsPerPage] = useState(10);
 
   // Fungsi untuk menampilkan CardSiswa
   const handleShowCard = (siswa) => {
@@ -27,12 +29,9 @@ const SectionContent = () => {
   };
 
 
-  const handleSearchChange = (event) => {
+  const handleSearch = (event) => {
     setSearch(event.target.value);
-    const filteredData = data_Siswa.filter((siswa) =>
-      siswa.nama.toLowerCase().includes(event.target.value.toLowerCase())
-    );
-    setData(filteredData);
+    setCurrentPage(1); // Reset to first page when search query changes
   };
   
   return (
@@ -52,7 +51,7 @@ const SectionContent = () => {
 
 {/* filter */}
 
-      <Box
+      {/* <Box
         sx={{
           display:'flex',
           justifyContent:'center',
@@ -176,7 +175,7 @@ const SectionContent = () => {
         </Box>
         
 
-      </Box>
+      </Box> */}
     {/* search bar */}
       <Box
        sx={{
@@ -207,7 +206,7 @@ const SectionContent = () => {
           lineHeight:'25.2px'
           }}
         >
-          Cari Nama Siswa
+          Cari Nama Siswa,PTN,Asal Sekolah
         </Typography>
         </Box>
        
@@ -259,14 +258,14 @@ const SectionContent = () => {
                 setActive(!active) 
                 console.log(active)}}
 
-                onChange={handleSearchChange}
+                onChange={handleSearch}
               sx={{
                 '&:focus': {
                   // Gaya yang akan diterapkan ketika tombol dalam keadaan aktif (ditekan)
                   backgroundColor: 'green', // Ubah warna latar belakang saat tombol ditekan
                 },
               }} 
-              fullWidth='true' placeholder='Cari Nama Siswa'/>
+              fullWidth='true' placeholder='Cari Nama Siswa,PTN,Asal Sekolah'/>
             </Box>
             
         </Box>
@@ -348,10 +347,10 @@ const SectionContent = () => {
       alignSelf="flex-start"
       px={4}
       >
-        <Typography variant='h6' fontWeight='600' fontSize={{md:"24px",xs:'20px'}} lineHeight="28px">
+        <Typography variant='h6' fontWeight='600' fontSize={{md:"24px",xs:'20px'}} textAlign={{md:'justify',xs:'center'}}  lineHeight="28px">
           Para Siswa yang Lolos PTN Impian
         </Typography>
-        <Typography variant='body2' >
+        <Typography variant='body2'  textAlign={{md:'justify',xs:'center'}}>
         Lihat testimoni mereka tentang bimbel SINTETA
         </Typography>
 
@@ -359,6 +358,7 @@ const SectionContent = () => {
         sx={{
           display:'flex',
           alignItems:'center',
+          justifyContent:{md:'normal',xs:'center'},
           gap:'20px',
           marginTop:'10px'
         }}
@@ -385,10 +385,10 @@ const SectionContent = () => {
               fontWeight:'600',
               fontSize:'12px',
               lineHeight:'16.8px',
-              color:'#4D4D4D'
+              color:'#A6A6A6'
             }}
           >
-            SMA
+            2022
           </Typography>
 
         </Box>
@@ -418,6 +418,36 @@ const SectionContent = () => {
               color:'#A6A6A6'
             }}
           >
+            2023
+          </Typography>
+
+        </Box>
+
+        <Box
+        component="div"      
+        sx={{
+          padding:'8px 16px',
+          border:'1px solid #E5EAF1',
+          background:'#E5EAF1',
+          height:'33px',
+          width:'63px',       
+          gap:'8px',
+          borderRadius:'20px',
+          display:'flex',
+          justifyContent:'center',
+          alignItems:'center',
+          marginBottom:'20px',
+          cursor:'pointer'
+        }}
+        >
+          <Typography
+            sx={{
+              fontWeight:'600',
+              fontSize:'12px',
+              lineHeight:'16.8px',
+              color:'#4D4D4D'
+            }}
+          >
             2024
           </Typography>
 
@@ -437,7 +467,7 @@ const SectionContent = () => {
        {/* {data.map((item,i)=>(
            <CardSiswa data={item} key={i}/>
        ))}           */}
-       <TableKelolosan  search={search} handleCloseCard={handleCloseCard} handleShowCard={handleShowCard} selectedSiswa={selectedSiswa} display={display}/>
+       <TableKelolosan  itemsPerPage={itemsPerPage} setCurrentPage={setCurrentPage} currentPage={currentPage} search={search} handleCloseCard={handleCloseCard} handleShowCard={handleShowCard} selectedSiswa={selectedSiswa} display={display}/>
      
       
              
