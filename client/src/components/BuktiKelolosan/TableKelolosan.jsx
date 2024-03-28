@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { styled } from '@mui/material/styles';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -41,13 +41,23 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 
 
 const TableKelolosan = ({setSearch,search,handleShowCard,handleCloseCard,selectedSiswa,display}) => {
- 
 
+ 
+  const [data,setData] = useState([]);
   const pageNumbers = [];
-  const allData = dataSiswaKelolosan.length
+  const allData = data.length
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage] = useState(100);
+
+  useEffect(()=>{
+    getData();
+  },[])
   
+  const getData = async () =>{
+    const response = await fetch('https://api.bimbel-sinteta.id/api/v1/acceptedUniversity');
+    const res = await response.json();
+    setData(res)  
+  }
   const handleSearch = (event) => {
     setSearch(event.target.value);
     setCurrentPage(1); // Reset to first page when search query changes
@@ -64,13 +74,19 @@ for(let i = 1; i <= Math.ceil(allData/ itemsPerPage); i++) {
 const indexOfLastItem = currentPage * itemsPerPage;
 const indexOfFirstItem = indexOfLastItem - itemsPerPage;
 // const currentData = filteredData.slice(indexOfFirstItem, indexOfLastItem);
-const currentData = dataSiswaKelolosan
-.filter((siswa) => 
+// const currentData = data
+// .filter((siswa) => 
+//   siswa.NAMA.toLowerCase().includes(search.toLowerCase()) ||
+//   siswa.ASAL_SEKOLAH.toLowerCase().includes(search.toLowerCase()) ||
+//   siswa.DITERIMA_PTN.toLowerCase().includes(search.toLowerCase())
+// )
+// .slice(indexOfFirstItem, indexOfLastItem);
+
+const currentData = data.length > 0 ? data.filter((siswa) => 
   siswa.NAMA.toLowerCase().includes(search.toLowerCase()) ||
   siswa.ASAL_SEKOLAH.toLowerCase().includes(search.toLowerCase()) ||
   siswa.DITERIMA_PTN.toLowerCase().includes(search.toLowerCase())
-)
-.slice(indexOfFirstItem, indexOfLastItem);
+).slice(indexOfFirstItem, indexOfLastItem) : [];
 
 const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
@@ -104,15 +120,15 @@ const paginate = (pageNumber) => setCurrentPage(pageNumber);
         </TableHead>
         <TableBody>
           {       
-          currentData.map((row,i) => (
+           data.data.map((row,i) => (
             <StyledTableRow key={i}>
               <StyledTableCell component="th" scope="row">
-                {row.NO}
+                {i + 1}
               </StyledTableCell>
-              <StyledTableCell align="center">{row.NAMA}</StyledTableCell>
-              <StyledTableCell align="center">{row.ASAL_SEKOLAH}</StyledTableCell>
-              <StyledTableCell align="center">{row.DITERIMA_PTN}</StyledTableCell>
-              <StyledTableCell align="center">{row.JURUSAN}</StyledTableCell>
+              <StyledTableCell align="center">{row.name}</StyledTableCell>
+              <StyledTableCell align="center">{row.graduatedFrom}</StyledTableCell>
+              <StyledTableCell align="center">{row.acceptedSchool}</StyledTableCell>
+              {/* <StyledTableCell align="center">{row.JURUSAN}</StyledTableCell> */}
 
               {/* <StyledTableCell align="center">
                 <Link 
