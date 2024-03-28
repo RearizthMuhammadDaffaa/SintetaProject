@@ -28,7 +28,7 @@ export const data_cabang = [
    },
    {
     img: pp3,
-    daerah:"Jakata Utara - Pelumpang" ,
+    daerah:"Jakata Utara - Plumpang" ,
    alamat: "Jl. Plumpang Semper Kelurahan No.1 11, RT.11/RW.12, Tugu Sel., Kec. Koja, Jkt Utara, Daerah Khusus Ibukota Jakarta 14260",
    noHp:"6285872016062" ,
    linkMap: "https://maps.app.goo.gl/xkZEB1zkAiqbgFn28",

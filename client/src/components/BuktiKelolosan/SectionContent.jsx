@@ -287,13 +287,13 @@ const SectionContent = () => {
      
       flexDirection="column"
       width={{md:'100%',xs:'50%'}}
-      alignSelf="flex-start"
+      
       px={4}
       >
-        <Typography variant='h6' fontWeight='600' fontSize={{md:"24px",xs:'20px'}} textAlign={{md:'justify',xs:'center'}}  lineHeight="28px">
+        <Typography variant='h6' fontWeight='600' fontSize={{md:"24px",xs:'20px'}} textAlign='center'  lineHeight="28px">
           Para Siswa yang Lolos PTN Impian
         </Typography>
-        <Typography variant='body2'  textAlign={{md:'justify',xs:'center'}}>
+        <Typography variant='body2'  textAlign='center'>
         Lihat testimoni mereka tentang bimbel SINTETA
         </Typography>
 
@@ -301,7 +301,7 @@ const SectionContent = () => {
         sx={{
           display:'flex',
           alignItems:'center',
-          justifyContent:{md:'normal',xs:'center'},
+          justifyContent:'center',
           gap:'20px',
           marginTop:'10px'
         }}
