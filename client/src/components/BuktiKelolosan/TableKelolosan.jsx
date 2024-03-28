@@ -40,13 +40,18 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 
 
 
-const TableKelolosan = ({currentPage,setCurrentPage,itemsPerPage,search,handleShowCard,handleCloseCard,selectedSiswa,display}) => {
+const TableKelolosan = ({setSearch,search,handleShowCard,handleCloseCard,selectedSiswa,display}) => {
  
 
   const pageNumbers = [];
   const allData = dataSiswaKelolosan.length
-
+  const [currentPage, setCurrentPage] = useState(1);
+  const [itemsPerPage] = useState(100);
   
+  const handleSearch = (event) => {
+    setSearch(event.target.value);
+    setCurrentPage(1); // Reset to first page when search query changes
+  };
 
 //   const filteredData = dataSiswaKelolosan.filter((siswa) =>
 //   siswa.nama.toLowerCase().includes(search.toLowerCase()) || siswa.asalSekolah.toLowerCase().includes(search.toLowerCase()) || siswa.ptn.toLowerCase().includes(search.toLowerCase())
@@ -61,9 +66,9 @@ const indexOfFirstItem = indexOfLastItem - itemsPerPage;
 // const currentData = filteredData.slice(indexOfFirstItem, indexOfLastItem);
 const currentData = dataSiswaKelolosan
 .filter((siswa) => 
-  siswa.nama.toLowerCase().includes(search.toLowerCase()) ||
-  siswa.asalSekolah.toLowerCase().includes(search.toLowerCase()) ||
-  siswa.ptn.toLowerCase().includes(search.toLowerCase())
+  siswa.NAMA.toLowerCase().includes(search.toLowerCase()) ||
+  siswa.ASAL_SEKOLAH.toLowerCase().includes(search.toLowerCase()) ||
+  siswa.DITERIMA_PTN.toLowerCase().includes(search.toLowerCase())
 )
 .slice(indexOfFirstItem, indexOfLastItem);
 
@@ -87,8 +92,14 @@ const paginate = (pageNumber) => setCurrentPage(pageNumber);
             <StyledTableCell align="center">Nama</StyledTableCell>
             <StyledTableCell align="center">Asal Sekolah</StyledTableCell>
             <StyledTableCell align="center">PTN</StyledTableCell>
-            <StyledTableCell align="center">Jurusan</StyledTableCell>
-           
+            <StyledTableCell align="center">Jurusan</StyledTableCell>          
+          </TableRow>
+          <TableRow >
+            <StyledTableCell ></StyledTableCell>
+            <StyledTableCell align="center"><input type="text" style={{height:'40px'}} placeholder='Cari Nama Siswa' onChange={handleSearch}/></StyledTableCell>
+            <StyledTableCell align="center"><input type="text" style={{height:'40px'}} placeholder='Cari Asal Sekolah' onChange={handleSearch}/></StyledTableCell>
+            <StyledTableCell align="center"><input type="text" style={{height:'40px'}} placeholder='Cari PTN' onChange={handleSearch}/></StyledTableCell>
+            <StyledTableCell align="center"></StyledTableCell>          
           </TableRow>
         </TableHead>
         <TableBody>
@@ -96,12 +107,12 @@ const paginate = (pageNumber) => setCurrentPage(pageNumber);
           currentData.map((row,i) => (
             <StyledTableRow key={i}>
               <StyledTableCell component="th" scope="row">
-                {i + 1}
+                {row.NO}
               </StyledTableCell>
-              <StyledTableCell align="center">{row.nama}</StyledTableCell>
-              <StyledTableCell align="center">{row.asalSekolah}</StyledTableCell>
-              <StyledTableCell align="center">{row.ptn}</StyledTableCell>
-              <StyledTableCell align="center">{row.jurusan}</StyledTableCell>
+              <StyledTableCell align="center">{row.NAMA}</StyledTableCell>
+              <StyledTableCell align="center">{row.ASAL_SEKOLAH}</StyledTableCell>
+              <StyledTableCell align="center">{row.DITERIMA_PTN}</StyledTableCell>
+              <StyledTableCell align="center">{row.JURUSAN}</StyledTableCell>
 
               {/* <StyledTableCell align="center">
                 <Link 

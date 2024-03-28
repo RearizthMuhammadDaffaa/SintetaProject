@@ -13,8 +13,7 @@ const SectionContent = () => {
   const [data,setData] = useState(data_Siswa);
   const [selectedSiswa, setSelectedSiswa] = useState(null); // State untuk menyimpan data siswa yang dipilih
   const [display,setDisplay] = useState('flex')
-  const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage] = useState(10);
+  
 
   // Fungsi untuk menampilkan CardSiswa
   const handleShowCard = (siswa) => {
@@ -29,10 +28,7 @@ const SectionContent = () => {
   };
 
 
-  const handleSearch = (event) => {
-    setSearch(event.target.value);
-    setCurrentPage(1); // Reset to first page when search query changes
-  };
+  
   
   return (
     <Box
@@ -177,7 +173,7 @@ const SectionContent = () => {
 
       </Box> */}
     {/* search bar */}
-      <Box
+      {/* <Box
        sx={{
         width:'100%',
         height:'100%',
@@ -269,62 +265,9 @@ const SectionContent = () => {
             </Box>
             
         </Box>
-        {/* <Box
-          sx={{
-           width:{md:"520px",xs:'320px'},
-            display:'flex',
-            flexDirection:'column'
-          }}
-        >
-          <Box
-            sx={{
-              width:'100%',
-              borderRadius:'10px 10px 0px 0px',
-              padding:'12px',
-              display:'flex',
-              justifyContent:'space-between',
-              alignItems:'center',
-              
-              border:'1px solid black'
-            }}
-          >
-            <Typography>
-              Nama Siswa
-            </Typography>
+       
 
-            <Typography>
-              Nama Siswa
-            </Typography>
-              
-          </Box>
-
-          <Box
-            sx={{
-              display:'flex',
-              justifyContent:'space-between',
-              alignItems:'center',
-              flexDirection:'column'
-
-            }}
-          >
-
-            {data_Siswa.map((item)=>(
-              <Box>
-                 <Typography>
-              {item.nama}
-            </Typography>
-           
-              </Box>
-              
-            ))}
-
-            
-           
-          </Box>
-
-        </Box> */}
-
-      </Box>
+      </Box> */}
 
    
 
@@ -467,7 +410,7 @@ const SectionContent = () => {
        {/* {data.map((item,i)=>(
            <CardSiswa data={item} key={i}/>
        ))}           */}
-       <TableKelolosan  itemsPerPage={itemsPerPage} setCurrentPage={setCurrentPage} currentPage={currentPage} search={search} handleCloseCard={handleCloseCard} handleShowCard={handleShowCard} selectedSiswa={selectedSiswa} display={display}/>
+       <TableKelolosan setSearch={setSearch}  search={search} handleCloseCard={handleCloseCard} handleShowCard={handleShowCard} selectedSiswa={selectedSiswa} display={display}/>
      
       
              
