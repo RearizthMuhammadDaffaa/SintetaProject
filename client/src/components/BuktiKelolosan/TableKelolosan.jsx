@@ -120,7 +120,7 @@ const paginate = (pageNumber) => setCurrentPage(pageNumber);
         </TableHead>
         <TableBody>
           {       
-           data.data.map((row,i) => (
+           data && data.data && data.data.map((row,i) => (
             <StyledTableRow key={i}>
               <StyledTableCell component="th" scope="row">
                 {i + 1}
@@ -128,7 +128,7 @@ const paginate = (pageNumber) => setCurrentPage(pageNumber);
               <StyledTableCell align="center">{row.name}</StyledTableCell>
               <StyledTableCell align="center">{row.graduatedFrom}</StyledTableCell>
               <StyledTableCell align="center">{row.acceptedSchool}</StyledTableCell>
-              {/* <StyledTableCell align="center">{row.JURUSAN}</StyledTableCell> */}
+              <StyledTableCell align="center">{row.major}</StyledTableCell>
 
               {/* <StyledTableCell align="center">
                 <Link 
