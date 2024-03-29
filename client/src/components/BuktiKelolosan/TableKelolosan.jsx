@@ -100,7 +100,7 @@ const paginate = (pageNumber) => setCurrentPage(pageNumber);
         width:'100%'
       }}
     >
-    <TableContainer component={Paper} sx={{maxWidth: {md:'100%',sm:'80%',xs:'45%'}, overflow:'auto',display:display,flexDirection:'column'}}>
+    <TableContainer component={Paper} sx={{maxWidth: {md:'100%',sm:'80%',xs:'43%'}, overflow:'auto',display:display,flexDirection:'column'}}>
       <Table sx={{ minWidth: 700 }} aria-label="customized table">
         <TableHead>
           <TableRow>
