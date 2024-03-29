@@ -45,7 +45,7 @@ const TableKelolosan = ({setSearch,search,handleShowCard,handleCloseCard,selecte
  
   const [data,setData] = useState([]);
   const pageNumbers = [];
-  const allData = data.length
+  const allData = dataSiswaKelolosan.length
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage] = useState(100);
 
@@ -82,14 +82,14 @@ const indexOfFirstItem = indexOfLastItem - itemsPerPage;
 // )
 // .slice(indexOfFirstItem, indexOfLastItem);
 
-const currentData = data.length > 0 ? data.filter((siswa) => 
+const currentData = dataSiswaKelolosan.length > 0 ? dataSiswaKelolosan.filter((siswa) => 
   siswa.NAMA.toLowerCase().includes(search.toLowerCase()) ||
   siswa.ASAL_SEKOLAH.toLowerCase().includes(search.toLowerCase()) ||
   siswa.DITERIMA_PTN.toLowerCase().includes(search.toLowerCase())
 ).slice(indexOfFirstItem, indexOfLastItem) : [];
 
 const paginate = (pageNumber) => setCurrentPage(pageNumber);
-
+// data && data.data && data.data.map
   return (
     <Box
       sx={{
@@ -100,7 +100,7 @@ const paginate = (pageNumber) => setCurrentPage(pageNumber);
         width:'100%'
       }}
     >
-    <TableContainer component={Paper} sx={{maxWidth: {md:'100%',sm:'90%',xs:'50%'}, overflow:'auto',display:display,flexDirection:'column'}}>
+    <TableContainer component={Paper} sx={{maxWidth: {md:'100%',sm:'80%',xs:'45%'}, overflow:'auto',display:display,flexDirection:'column'}}>
       <Table sx={{ minWidth: 700 }} aria-label="customized table">
         <TableHead>
           <TableRow>
@@ -120,15 +120,15 @@ const paginate = (pageNumber) => setCurrentPage(pageNumber);
         </TableHead>
         <TableBody>
           {       
-           data && data.data && data.data.map((row,i) => (
+          currentData.map((row,i) => (
             <StyledTableRow key={i}>
               <StyledTableCell component="th" scope="row">
-                {i + 1}
+                {row.NO}
               </StyledTableCell>
-              <StyledTableCell align="center">{row.name}</StyledTableCell>
-              <StyledTableCell align="center">{row.graduatedFrom}</StyledTableCell>
-              <StyledTableCell align="center">{row.acceptedSchool}</StyledTableCell>
-              <StyledTableCell align="center">{row.major}</StyledTableCell>
+              <StyledTableCell align="center">{row.NAMA}</StyledTableCell>
+              <StyledTableCell align="center">{row.ASAL_SEKOLAH}</StyledTableCell>
+              <StyledTableCell align="center">{row.DITERIMA_PTN}</StyledTableCell>
+              <StyledTableCell align="center">{row.JURUSAN}</StyledTableCell>
 
               {/* <StyledTableCell align="center">
                 <Link 

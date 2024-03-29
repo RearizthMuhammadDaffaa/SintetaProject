@@ -17,9 +17,9 @@ const BuktiKelolosan = () => {
     }}
    >
     <BuktiKelolosanBanner />
-    <About />
-    <SectionCerita />
     <SectionContent />
+    <About />
+    <SectionCerita /> 
     <AluminSection />
     <Banner /> 
    </Box>
