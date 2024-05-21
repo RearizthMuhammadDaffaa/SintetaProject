@@ -1,19 +1,20 @@
 import { Box, Button, InputBase, Stack, TextField, Typography } from '@mui/material'
-import React from 'react'
+import React, { useEffect } from 'react'
 import SectionTitle from '../SectionTitle'
 import CardSiswa from './CardSiswa'
 import { data_Siswa } from '../../utils/dataSiswa'
 import { useState } from 'react'
 import TableKelolosan from './TableKelolosan'
-
+import axios from 'axios'
 
 const SectionContent = () => {
   const [active,setActive] = useState(false);
   const [search,setSearch] = useState("");
-  const [data,setData] = useState(data_Siswa);
+  const [data,setData] = useState([]);
   const [selectedSiswa, setSelectedSiswa] = useState(null); // State untuk menyimpan data siswa yang dipilih
   const [display,setDisplay] = useState('flex')
-  
+  const [year,setYear] = useState('2024')
+  const baseUrl = import.meta.env.VITE_BASE_URL
 
   // Fungsi untuk menampilkan CardSiswa
   const handleShowCard = (siswa) => {
@@ -27,6 +28,15 @@ const SectionContent = () => {
     setDisplay('flex')
   };
 
+  const getData = async () =>{
+    const response = await axios.get(`${baseUrl}acceptedUniversity`)
+    setData(response.data)
+    console.log(data)
+  }
+
+  useEffect(()=>{
+    getData()
+  },[])
 
   
   
@@ -307,6 +317,7 @@ const SectionContent = () => {
         }}
       >
         <Box
+        onClick={()=>setYear('2022')}
         component="div"      
         sx={{
           padding:'8px 16px',
@@ -328,7 +339,7 @@ const SectionContent = () => {
               fontWeight:'600',
               fontSize:'12px',
               lineHeight:'16.8px',
-              color:'#A6A6A6'
+              color : year == '2022' ? '#4D4D4D':'#A6A6A6'
             }}
           >
             2022
@@ -337,6 +348,7 @@ const SectionContent = () => {
         </Box>
 
         <Box
+        onClick={()=>setYear('2023')}
         component="div"      
         sx={{
           padding:'8px 16px',
@@ -358,7 +370,7 @@ const SectionContent = () => {
               fontWeight:'600',
               fontSize:'12px',
               lineHeight:'16.8px',
-              color:'#A6A6A6'
+              color : year == '2023' ? '#4D4D4D':'#A6A6A6'
             }}
           >
             2023
@@ -367,6 +379,7 @@ const SectionContent = () => {
         </Box>
 
         <Box
+        onClick={()=>setYear('2024')}
         component="div"      
         sx={{
           padding:'8px 16px',
@@ -388,7 +401,7 @@ const SectionContent = () => {
               fontWeight:'600',
               fontSize:'12px',
               lineHeight:'16.8px',
-              color:'#4D4D4D'
+              color : year == '2024' ? '#4D4D4D':'#A6A6A6'
             }}
           >
             2024
@@ -410,7 +423,7 @@ const SectionContent = () => {
        {/* {data.map((item,i)=>(
            <CardSiswa data={item} key={i}/>
        ))}           */}
-       <TableKelolosan setSearch={setSearch}  search={search} handleCloseCard={handleCloseCard} handleShowCard={handleShowCard} selectedSiswa={selectedSiswa} display={display}/>
+       <TableKelolosan setYear={setYear} setSearch={setSearch} year={year} search={search} handleCloseCard={handleCloseCard} handleShowCard={handleShowCard} selectedSiswa={selectedSiswa} display={display}/>
      
       
              

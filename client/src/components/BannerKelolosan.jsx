@@ -1,5 +1,5 @@
 import { Box, Button, Typography } from '@mui/material'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import BuktiKelolosan from "../assets/img/Gambar (1).png"
 import SectionTitle from './SectionTitle'
 import KelolosanCardHome from './KelolosanCardHome'
@@ -7,10 +7,55 @@ import Slider from 'react-slick'
 import nextButton from "../assets/img/Next Button.png"
 import { data_Siswa } from '../utils/dataSiswa'
 import { Link } from 'react-router-dom'
+import axios from 'axios'
 
 
 
 const BannerKelolosan = () => {
+
+  const [data,setData] = useState([]);
+  const baseUrl = import.meta.env.VITE_BASE_URL
+  const [image,setImage] = useState('');
+
+  const fetchImage = async (imageUrl) => {
+    try {
+      const res = await fetch(imageUrl);
+      const imageBlob = await res.blob();
+      const imageObjectURL = URL.createObjectURL(imageBlob);
+      return imageObjectURL;
+    } catch (error) {
+      console.error("Error fetching image:", error);
+      return null;
+    }
+  };
+  const getData = async () => {
+   try {
+     const response = await axios.get(`${baseUrl}congratulation`);
+     const data = response.data.data
+ 
+     // Fetch images for all facilities
+     const updatedData = await Promise.all(
+       data.map(async (item) => {
+         const imageUrl = item.picture;
+         const image = await fetchImage(imageUrl);
+         return { ...item, image };
+       })
+     );
+ 
+     setData(updatedData);
+     
+     
+   } catch (error) {
+     console.error("Error fetching facilities:", error);
+   }
+ };
+
+ 
+ useEffect(()=>{
+  getData();
+  fetchImage();
+},[])
+
 
 
   const settings = {  
@@ -151,7 +196,7 @@ const BannerKelolosan = () => {
             width:'100%',
           }}
         >
-          {data_Siswa.map((item,i)=>(
+          {data.map((item,i)=>(
               <KelolosanCardHome data={item} key={i}/>
           ))}
         

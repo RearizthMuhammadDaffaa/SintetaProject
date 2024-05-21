@@ -1,8 +1,10 @@
 import { Box, Button, Typography } from '@mui/material'
-import React from 'react'
+import React, { useEffect } from 'react'
 
 
 const KelolosanCardHome = ({data}) => {
+
+ 
   return (
    <Box
    
@@ -20,13 +22,21 @@ const KelolosanCardHome = ({data}) => {
     
    }}
    >
-
-    <img src={data.img} alt=""
+    <Box
+    sx={{
+      width:'201px',
+      height:'201px'
+    }}
+    >
+    <img src={data.image} alt=""
     style={{
       width:'201px',
       height:'201px'
     }}
     />
+    </Box>
+
+  
     <Box
       sx={{
         width:'100%',
@@ -47,7 +57,7 @@ const KelolosanCardHome = ({data}) => {
           marginBottom:'30px'
         }}
       >
-        {data.nama}
+        {data.name}
       </Typography>
 
       <Box
@@ -67,7 +77,7 @@ const KelolosanCardHome = ({data}) => {
             color:'#38B6FF'
           }}
         >
-        {data.asalSekolah}
+        {data.graduatedFrom}
         </Typography>
 
         <Typography
@@ -79,7 +89,7 @@ const KelolosanCardHome = ({data}) => {
             color:'#38B6FF'
           }}
         >
-      {data.kuliah}
+      {data.acceptedSchool}
         </Typography>
 
       </Box>

@@ -12,6 +12,8 @@ import { Link } from 'react-router-dom';
 import { Box, Button, Typography } from '@mui/material';
 import CardSiswa from './CardSiswa';
 import { dataSiswaKelolosan } from '../../utils/dataSiswaKelolosan';
+import axios from 'axios';
+
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -40,23 +42,32 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 
 
 
-const TableKelolosan = ({setSearch,search,handleShowCard,handleCloseCard,selectedSiswa,display}) => {
+const TableKelolosan = ({year,setYear,setSearch,search,handleShowCard,handleCloseCard,selectedSiswa,display}) => {
 
  
   const [data,setData] = useState([]);
+  const [years,setYears] = useState(year)
   const pageNumbers = [];
-  const allData = dataSiswaKelolosan.length
+  const allData = data?.data?.length;
   const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage] = useState(100);
+  const [itemsPerPage] =  useState(100);
+  const apiUrl = import.meta.env.VITE_BASE_URL;
+
+
 
   useEffect(()=>{
     getData();
   },[])
+
+  
+
   
   const getData = async () =>{
-    const response = await fetch('https://api.bimbel-sinteta.id/api/v1/acceptedUniversity');
-    const res = await response.json();
-    setData(res)  
+    const response = await axios.get(`${apiUrl}acceptedUniversity`);
+    setData(response.data.data)
+    const uniqueYears = [...new Set(response.data.data.map(item => item.yearAccepted))];
+    setYears(uniqueYears);
+   
   }
   const handleSearch = (event) => {
     setSearch(event.target.value);
@@ -82,11 +93,24 @@ const indexOfFirstItem = indexOfLastItem - itemsPerPage;
 // )
 // .slice(indexOfFirstItem, indexOfLastItem);
 
-const currentData = dataSiswaKelolosan.length > 0 ? dataSiswaKelolosan.filter((siswa) => 
-  siswa.NAMA.toLowerCase().includes(search.toLowerCase()) ||
-  siswa.ASAL_SEKOLAH.toLowerCase().includes(search.toLowerCase()) ||
-  siswa.DITERIMA_PTN.toLowerCase().includes(search.toLowerCase())
-).slice(indexOfFirstItem, indexOfLastItem) : [];
+
+const filteredData = data?.filter((siswa) =>
+  (siswa.name.toLowerCase().includes(search.toLowerCase()) ||
+siswa.graduatedFrom.toLowerCase().includes(search.toLowerCase()) ||
+siswa.acceptedSchool.toLowerCase().includes(search.toLowerCase())) &&
+(year ? siswa.yearAccepted === year : true)
+);
+
+const currentData = filteredData.slice(indexOfFirstItem, indexOfLastItem);
+
+
+// useEffect(() => {
+//   const filtered = currentData.filter(item => {
+//     return item.yearAccepted.includes(yearFilter);
+//   });
+//   setData(filtered.data);
+// }, [currentData, yearFilter]);
+
 
 const paginate = (pageNumber) => setCurrentPage(pageNumber);
 // data && data.data && data.data.map
@@ -123,12 +147,12 @@ const paginate = (pageNumber) => setCurrentPage(pageNumber);
           currentData.map((row,i) => (
             <StyledTableRow key={i}>
               <StyledTableCell component="th" scope="row">
-                {row.NO}
+                {i + 1}
               </StyledTableCell>
-              <StyledTableCell align="center">{row.NAMA}</StyledTableCell>
-              <StyledTableCell align="center">{row.ASAL_SEKOLAH}</StyledTableCell>
-              <StyledTableCell align="center">{row.DITERIMA_PTN}</StyledTableCell>
-              <StyledTableCell align="center">{row.JURUSAN}</StyledTableCell>
+              <StyledTableCell align="center">{row.name}</StyledTableCell>
+              <StyledTableCell align="center">{row.graduatedFrom}</StyledTableCell>
+              <StyledTableCell align="center">{row.acceptedSchool}</StyledTableCell>
+              <StyledTableCell align="center">{row.major}</StyledTableCell>
 
               {/* <StyledTableCell align="center">
                 <Link 

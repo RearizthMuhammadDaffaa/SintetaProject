@@ -1,10 +1,58 @@
 import { Box, Stack, Typography } from '@mui/material'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import icon from '../assets/img/Icon.png'
 import { data_fasilitas } from '../utils/dataFasilitas'
 import SectionTitle from '../components/SectionTitle'
-
+import axios from 'axios'
 const Fasilitas = () => {
+
+
+  const [data,setData] = useState([]);
+  const baseUrl = import.meta.env.VITE_BASE_URL
+
+  const [image,setImage] = useState('');
+  const [loading, setLoading] = useState(true);
+  // const imgURL = 'https://api.bimbel-sinteta.id/images/dT1RnoJM.png'
+  const fetchImage = async (imageUrl) => {
+    try {
+      const res = await fetch(imageUrl);
+      const imageBlob = await res.blob();
+      const imageObjectURL = URL.createObjectURL(imageBlob);
+      return imageObjectURL;
+    } catch (error) {
+      console.error("Error fetching image:", error);
+      return null;
+    }
+  };
+  const getData = async () => {
+    try {
+      const response = await axios.get(`${baseUrl}facility`);
+      const data = response.data.data;
+
+      // Fetch images for all facilities
+      const updatedData = await Promise.all(
+        data.map(async (item) => {
+          const imageUrl = item.picture;
+          const image = await fetchImage(imageUrl);
+          return { ...item, image };
+        })
+      );
+
+      setData(updatedData);
+      setLoading(false);
+      
+    } catch (error) {
+      console.error("Error fetching facilities:", error);
+    }
+ };
+ 
+ 
+ 
+   useEffect(()=>{
+     getData();
+     fetchImage();
+   },[])
+
   return (
     <Box
     sx={{
@@ -61,7 +109,7 @@ const Fasilitas = () => {
      
       >
 
-        {data_fasilitas.map((item)=>(
+        {data.map((item,i)=>(
              <Box
              sx={{
                width:'300px',
@@ -73,7 +121,7 @@ const Fasilitas = () => {
                alignItems:'center'
              }}
            >
-             <img src={item.img} alt="" width='100' height='100'/>
+             <img src={item.image} alt="" width='100' height='100'/>
              <Typography
              sx={{
                fontWeight:'600',
@@ -82,7 +130,7 @@ const Fasilitas = () => {
                textAlign:'center',
                color:'#61B3E3'
              }}
-             >{item.title}</Typography>
+             >{item.about}</Typography>
    
              <Typography
                sx={{
@@ -93,7 +141,7 @@ const Fasilitas = () => {
                  color:'#4B4D52'
                }}
              >
-            {item.desk}
+            {item.description}
              </Typography>
            </Box>
         ))}
