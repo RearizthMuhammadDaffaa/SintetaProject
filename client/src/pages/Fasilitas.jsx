@@ -109,7 +109,7 @@ const Fasilitas = () => {
      
       >
 
-        {data.map((item,i)=>(
+        {data_fasilitas.map((item,i)=>(
              <Box
              sx={{
                width:'300px',
@@ -121,7 +121,7 @@ const Fasilitas = () => {
                alignItems:'center'
              }}
            >
-             <img src={item.image} alt="" width='100' height='100'/>
+             <img src={item.img} alt="" width='100' height='100'/>
              <Typography
              sx={{
                fontWeight:'600',
@@ -130,7 +130,7 @@ const Fasilitas = () => {
                textAlign:'center',
                color:'#61B3E3'
              }}
-             >{item.about}</Typography>
+             >{item.title}</Typography>
    
              <Typography
                sx={{
@@ -141,7 +141,7 @@ const Fasilitas = () => {
                  color:'#4B4D52'
                }}
              >
-            {item.description}
+            {item.desk}
              </Typography>
            </Box>
         ))}

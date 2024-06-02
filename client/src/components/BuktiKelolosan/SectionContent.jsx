@@ -28,15 +28,7 @@ const SectionContent = () => {
     setDisplay('flex')
   };
 
-  const getData = async () =>{
-    const response = await axios.get(`${baseUrl}acceptedUniversity`)
-    setData(response.data)
-    console.log(data)
-  }
 
-  useEffect(()=>{
-    getData()
-  },[])
 
   
   

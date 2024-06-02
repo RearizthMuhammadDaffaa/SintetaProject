@@ -78,9 +78,7 @@ const TableKelolosan = ({year,setYear,setSearch,search,handleShowCard,handleClos
 //   siswa.nama.toLowerCase().includes(search.toLowerCase()) || siswa.asalSekolah.toLowerCase().includes(search.toLowerCase()) || siswa.ptn.toLowerCase().includes(search.toLowerCase())
 // );
 
-for(let i = 1; i <= Math.ceil(allData/ itemsPerPage); i++) {
-  pageNumbers.push(i)
-} 
+
 
 const indexOfLastItem = currentPage * itemsPerPage;
 const indexOfFirstItem = indexOfLastItem - itemsPerPage;
@@ -102,6 +100,10 @@ siswa.acceptedSchool.toLowerCase().includes(search.toLowerCase())) &&
 );
 
 const currentData = filteredData.slice(indexOfFirstItem, indexOfLastItem);
+
+for(let i = 1; i <= Math.ceil(data.length/ itemsPerPage); i++) {
+  pageNumbers.push(i)
+} 
 
 
 // useEffect(() => {
