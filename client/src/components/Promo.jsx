@@ -1,5 +1,5 @@
 import { Box, Button, Card, CardActions, CardContent, CardMedia, Typography } from '@mui/material'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import leftArrow from '../assets/img/Next Button.png'
 import rightArrow from '../assets/img/Next Button (1).png'
 import ListProgram from './ListProgram'
@@ -8,28 +8,80 @@ import Slider from "react-slick";
 import SectionTitle from './SectionTitle'
 import promoImg from "../assets/PromoImg/Gambar (16).png"
 import promoImg1 from "../assets/PromoImg/Gambar (17).png"
+import zIndex from '@mui/material/styles/zIndex'
+import axios from 'axios'
 
 const Promo = () => {
+
+  const [data,setData] = useState([]);
+  const baseUrl = import.meta.env.VITE_BASE_URL
+  const [image,setImage] = useState('');
+
+  const fetchImage = async (imageUrl) => {
+    try {
+      const res = await fetch(imageUrl);
+      const imageBlob = await res.blob();
+      const imageObjectURL = URL.createObjectURL(imageBlob);
+      return imageObjectURL;
+    } catch (error) {
+      console.error("Error fetching image:", error);
+      return null;
+    }
+  };
+  const getData = async () => {
+   try {
+     const response = await axios.get(`${baseUrl}promo`);
+     const data = response.data.data
+ 
+     // Fetch images for all facilities
+     const updatedData = await Promise.all(
+       data.map(async (item) => {
+         const imageUrl = item.picture;
+         const image = await fetchImage(imageUrl);
+         return { ...item, image };
+       })
+     );
+ 
+     setData(updatedData);
+     console.log(data);
+     
+   } catch (error) {
+     console.error("Error fetching facilities:", error);
+   }
+ };
+
+ 
+ useEffect(()=>{
+  getData();
+  fetchImage();
+},[])
+
+const formatDate = (dateString) => {
+  const options = { day: '2-digit', month: 'long', year: 'numeric' };
+  return new Date(dateString).toLocaleDateString('id-ID', options);
+};
 
   const settings = {
     arrow:true,
     dots: true,
     
     speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 3,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    centerMode: true,
     responsive: [
       {
         breakpoint: 1024, // Atur breakpoint untuk layar desktop
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 2,
           slidesToScroll: 1,
+          centerMode: false,
         },
       },
       {
         breakpoint: 768, // Atur breakpoint untuk layar tablet
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 1,
           slidesToScroll: 1,
         },
       },
@@ -95,7 +147,8 @@ const Promo = () => {
       </Box> */}
 
       <SectionTitle title="Promo Kami"/>
-
+    
+  
       <Box
       sx={{
         width:'100%',
@@ -110,6 +163,8 @@ const Promo = () => {
         position:'relative'
       }}
       >
+
+
 
         <Box
         sx={{
@@ -128,6 +183,7 @@ const Promo = () => {
         >
 
 
+
         <Box
           sx={{
             display:'flex',
@@ -137,18 +193,34 @@ const Promo = () => {
             gap:'35px'
           }}
         >
-          <Card sx={{ width: "531.5px",height:'371px',zIndex:'5' }}>
+          <Slider
+     style={{
+      width:'100%',
+      zIndex:'1',
+      margin: '0 auto'
+    }}
+    {...settings}
+    >
+   
+   {data.map((item,index)=>(
+    <div
+    key={data.id}
+    style={{
+      padding:'0px 10px'
+    }}
+   >
+    <Card sx={{ width: "531.5px",height:'371px',zIndex:'5'  }}>
       <CardMedia
         sx={{ height: "196px" }}
-        image={promoImg}
+        image={item.image}
         title="promo 1"
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
-          Promo Berkah Ramadhan
+          {item.name}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-       Siswa/i melakukan program belajar selama 3 semester
+       {item.description}
         </Typography>
 
      
@@ -164,11 +236,19 @@ const Promo = () => {
             marginLeft:'15px'
         }}
       >
-      Terakhir sampai 4 April 2024
+      Terakhir sampai {formatDate(item.expired)}
       </Typography>
     </Card>
-
-    <Card sx={{ width: "531.5px",height:'371px',zIndex:'5' }}>
+   </div>
+   ))}
+   
+         
+    {/* <div
+      style={{
+        padding:'0px 10px'
+      }}
+    >
+      <Card sx={{ width: "531.5px",height:'371px',zIndex:'5'  }}>
       <CardMedia
         sx={{ height: "196px" }}
         image={promoImg1}
@@ -199,6 +279,12 @@ const Promo = () => {
       Terakhir sampai 4 April 2024
       </Typography>
     </Card>
+    </div> */}
+
+    
+    </Slider>
+
+       
         </Box>
 
       
