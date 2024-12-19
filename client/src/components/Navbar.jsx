@@ -232,7 +232,7 @@ const Navbar = () => {
             textDecoration:'none'
             }}>Tentang Kami</Link>
 
-             <a href="https://exam.bimbel-sinteta.my.id/"
+             <a href="https://bimbel-sinteta.my.id/"
               target='_blank'
             >
                <Button variant="contained"
